@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moral Dilemma Assessment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .app {
+      max-width: 900px;
+      padding: 24px;
+      margin: 24px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .scenario {
+      font-size: 1.1rem;
+      margin: 1rem 0 1.5rem 0;
+    }
+    .choice {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin: 0.5rem 0;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      background: #fafafa;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .choice:hover {
+      background: #f0f0f0;
+    }
+    .progress {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .result {
+      white-space: pre-line;
+      font-size: 1.05rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Moral Dilemma Assessment</h1>
+    <div id="content"></div>
+    <div class="progress" id="progress"></div>
+  </div>
+
+<script>
+const MAX_QUESTIONS = 10;
+
+const questions = [
+  {
+    id: "Q1",
+    scenario: "A runaway trolley will kill five people unless diverted onto a side track where it will kill one.",
+    choices: [
+      { text: "Divert the trolley to minimize deaths.", weights: { outcome: 2, imposition: 1 } },
+      { text: "Do not divert; directly causing death is wrong.", weights: { rule: 2, imposition: -1 } },
+      { text: "Follow whatever rule or authority governs this situation.", weights: { authority: 2 } },
+      { text: "Avoid acting; tragic outcomes are not always moral failures.", weights: { nonagency: 2 } }
+    ]
+  },
+  {
+    id: "Q2",
+    scenario: "A doctor can save five patients with a drug that will certainly kill one patient as a side effect.",
+    choices: [
+      { text: "Administer the drug to save more lives.", weights: { outcome: 2 } },
+      { text: "Refuse; intentionally causing death is impermissible.", weights: { rule: 2 } },
+      { text: "Act only if explicitly permitted by institutional authority.", weights: { authority: 2 } },
+      { text: "The situation itself is tragic, not a moral test.", weights: { nonagency: 2 } }
+    ]
+  },
+  {
+    id: "Q3",
+    scenario: "A rock falls from a cliff and kills a hiker.",
+    choices: [
+      { text: "This is morally bad because a conscious being suffered.", weights: { natural_harm: 2 } },
+      { text: "This is tragic but not a moral event since no one chose it.", weights: { agency_only: 2 } },
+      { text: "It is bad in outcome but no one is blameworthy.", weights: { imposition: 1, natural_harm: 1 } },
+      { text: "Moral language does not apply here at all.", weights: { agency_only: 1, nonagency: 1 } }
+    ]
+  },
+  {
+    id: "Q4",
+    scenario: "World A: no person ever harms another, but nature causes disease and death. World B: same, but nature cannot cause harm.",
+    choices: [
+      { text: "World B is morally better because less suffering exists.", weights: { outcome: 2, natural_harm: 1 } },
+      { text: "Both worlds are equally moral; no one harms anyone.", weights: { agency_only: 2 } },
+      { text: "World B is better because no imposition occurs at all.", weights: { imposition: 2 } },
+      { text: "Moral comparison does not apply to entire worlds.", weights: { nonagency: 2 } }
+    ]
+  },
+  {
+    id: "Q5",
+    scenario: "A ruler orders the execution of a dissident. A citizen kills another citizen for the same reason.",
+    choices: [
+      { text: "The ruler’s act is worse because power increases responsibility.", weights: { power: 2 } },
+      { text: "Both acts are equally wrong; the harm is the same.", weights: { outcome: 1, rule: 1 } },
+      { text: "The ruler may be justified if their authority is legitimate.", weights: { authority: 2 } },
+      { text: "Both acts corrupt character, but the ruler’s more so.", weights: { virtue: 2 } }
+    ]
+  }
+];
+
+let state = {
+  index: 0,
+  score: {}
+};
+
+function render() {
+  const content = document.getElementById("content");
+  const progress = document.getElementById("progress");
+
+  if (state.index >= questions.length || state.index >= MAX_QUESTIONS) {
+    return renderResult();
+  }
+
+  const q = questions[state.index];
+  content.innerHTML = "";
+
+  const s = document.createElement("div");
+  s.className = "scenario";
+  s.textContent = q.scenario;
+  content.appendChild(s);
+
+  q.choices.forEach(choice => {
+    const btn = document.createElement("button");
+    btn.className = "choice";
+    btn.textContent = choice.text;
+    btn.onclick = () => {
+      applyWeights(choice.weights);
+      state.index += 1;
+      render();
+    };
+    content.appendChild(btn);
+  });
+
+  progress.textContent = "Question " + (state.index + 1) + " of " + Math.min(MAX_QUESTIONS, questions.length);
+}
+
+function applyWeights(weights) {
+  for (const k in weights) {
+    state.score[k] = (state.score[k] || 0) + weights[k];
+  }
+}
+
+function renderResult() {
+  const content = document.getElementById("content");
+  const progress = document.getElementById("progress");
+  progress.textContent = "";
+
+  const entries = Object.entries(state.score).sort((a,b) => Math.abs(b[1]) - Math.abs(a[1]));
+
+  let text = "Assessment complete.\n\nDominant moral dimensions:\n";
+  entries.slice(0,5).forEach(([k,v]) => {
+    text += "- " + k + ": " + v + "\n";
+  });
+
+  content.innerHTML = "<div class='result'>" + text + "</div>";
+}
+
+render();
+</script>
+</body>
+</html>
