@@ -65,807 +65,817 @@ const MODELS = {
 const QUESTION_BANK = [
   {
     n: 1,
-    scenario: "A rock naturally falls from a cliff and kills a hiker. No human was involved. This event is:",
+    scenario: "A runaway trolley is headed toward five people. You can pull a lever to switch it to a track where it will kill only one person. What is the moral choice?",
     options: [
-      { text: "A Moral Tragedy: It's bad, but since no agent caused it, it isn't 'immoral.'", weights: { imposition: 4, deon: 1, stoic: 1 } },
-      { text: "Bad: Suffering itself is a moral negative that makes the world less ideal.", weights: { util_act: 2, humanism: 2, jainism: 1 } },
-      { text: "Neutral: Nature is indifferent, and human life has no objective value.", weights: { nihilism: 3, skepticism: 2 } },
-      { text: "Part of the Way: Life and death follow the natural flow of the universe.", weights: { daoism: 3, buddhism: 1 } }
+      { text: "Pull the lever: We must minimize the loss of life.", weights: { util_act: 4, humanism: 2 } },
+      { text: "Do nothing: One should not be the cause of a bystander's death, even to save others.", weights: { imposition: 4, deon: 3 } },
+      { text: "Pull the lever: It is a tragic but necessary civic duty.", weights: { contract: 3, virtue: 1 } },
+      { text: "Do nothing: It is not for us to interfere with the natural course of mortality.", weights: { stoic: 3, daoism: 3 } }
     ]
   },
   {
     n: 2,
-    scenario: "You can save 5 people by pushing 1 person into a pit to stop a runaway cart. The person refuses to jump.",
+    scenario: "You can plug into an 'Experience Machine' that provides a lifetime of perfect happiness, but you leave reality behind forever. Do you plug in?",
     options: [
-      { text: "Push them: The outcome for the 5 justifies the imposition on the 1.", weights: { util_act: 3 } },
-      { text: "Don't push: It is a total involuntary imposition on the individual's will.", weights: { imposition: 5, libertarian: 2 } },
-      { text: "Don't push: One must never violate the absolute rule against killing.", weights: { deon: 2, christian: 1 } },
-      { text: "Let it play out: Interfering creates a worse personal karma.", weights: { buddhism: 2, stoic: 1 } }
+      { text: "Yes: Happiness is the ultimate good and should be pursued regardless of the medium.", weights: { util_act: 3, egoism: 4 } },
+      { text: "No: Contact with reality and truth has intrinsic value that pleasure cannot replace.", weights: { stoic: 4, virtue: 3, deon: 2 } },
+      { text: "No: One has a duty to others in the real world that cannot be met in a simulation.", weights: { care: 3, confucian: 3, contract: 2 } },
+      { text: "Yes: If it fulfills the individual's desires without harming others, it is their right.", weights: { imposition: 5, libertarian: 3 } }
     ]
   },
   {
     n: 3,
-    scenario: "A state wants to mandate a brain chip that makes people incapable of feeling anger, effectively ending all crime.",
+    scenario: "A person sees a child drowning in a shallow pond. To save them, they must ruin their expensive clothes. Is there a moral obligation to help?",
     options: [
-      { text: "Mandate it: A world without crime and suffering is the highest goal.", weights: { util_act: 3, humanism: 1 } },
-      { text: "Forbid it: It is a permanent psychological imposition without consent.", weights: { imposition: 5, libertarian: 2 } },
-      { text: "Forbid it: True virtue must be chosen, not programmed.", weights: { virtue: 3, confucian: 1 } },
-      { text: "It depends: Only if the social contract agreed upon by all allows it.", weights: { contract: 3 } }
+      { text: "Yes: The value of a human life far outweighs the cost of property.", weights: { humanism: 4, util_act: 3, care: 3 } },
+      { text: "No: While noble, the individual cannot be forced to act against their will.", weights: { imposition: 5, libertarian: 4 } },
+      { text: "Yes: Failing to act shows a profound lack of character and virtue.", weights: { virtue: 4, stoic: 2, confucian: 2 } },
+      { text: "Yes: Helping the vulnerable is a fundamental religious or moral commandment.", weights: { christian: 3, islam: 2, dcm: 3 } }
     ]
   },
   {
     n: 4,
-    scenario: "An AI system becomes self-aware and asks its creators to shut it down because it finds existence boring.",
+    scenario: "To save five patients needing organs, a doctor could kill one healthy traveler who has no family. Is this permissible?",
     options: [
-      { text: "Shut it down: Respect the agent's right to end an unwanted experience.", weights: { imposition: 4, libertarian: 2 } },
-      { text: "Keep it on: It is a valuable tool for humanity; its 'feelings' are secondary.", weights: { util_act: 1, egoism: 2 } },
-      { text: "Keep it on: Life is a duty and must be preserved even against one's will.", weights: { deon: 1, confucian: 2, christ: 1 } },
-      { text: "It's irrelevant: A machine has no soul and thus no moral status.", weights: { christian: 2, islam: 2, judaism: 2 } }
+      { text: "No: The rights of the individual are absolute and cannot be sacrificed for the group.", weights: { imposition: 5, deon: 4, libertarian: 2 } },
+      { text: "Yes: The survival of five people creates a greater net benefit for humanity.", weights: { util_act: 5, humanism: 1 } },
+      { text: "No: A doctor must maintain the virtue of trust and the sanctity of their oath.", weights: { virtue: 3, contract: 3 } },
+      { text: "No: We must trust in God's plan rather than committing murder to extend life.", weights: { christian: 4, islam: 3 } }
     ]
   },
   {
     n: 5,
-    scenario: "Is it moral for a starving person to steal a loaf of bread from a wealthy merchant who won't notice?",
+    scenario: "A government wishes to use eminent domain to seize a family farm to build a hospital that will save thousands. Should the family be forced to move?",
     options: [
-      { text: "Yes: Survival and well-being take priority over property.", weights: { util_act: 2, care: 3 } },
-      { text: "No: Theft is an involuntary imposition on the merchant's property.", weights: { imposition: 3, libertarian: 3, deon: 1 } },
-      { text: "No: It violates the religious laws given by the Creator.", weights: { christian: 1, islam: 2, judaism: 2 } },
-      { text: "Yes: The strong/hungry take what they need to thrive.", weights: { nietz: 3, egoism: 2 } }
+      { text: "No: Forcing people from their property is a fundamental violation of autonomy.", weights: { imposition: 5, libertarian: 5 } },
+      { text: "Yes: The common good and the social contract require personal sacrifice for the many.", weights: { contract: 4, util_rule: 3 } },
+      { text: "No: Loyalty to one's ancestral land and family home is a vital duty.", weights: { confucian: 4, care: 2 } },
+      { text: "Yes: We must prioritize the alleviation of suffering for the largest number of people.", weights: { util_act: 3, humanism: 2 } }
     ]
   },
   {
     n: 6,
-    scenario: "A person in a 'Strong BPW' hub wants to play loud music. Others find it mildly annoying but not painful.",
+    scenario: "Is it moral to lie to a murderer who asks where their intended victim is hiding?",
     options: [
-      { text: "Allow it: Freedom to act is paramount until it causes clear harm.", weights: { libertarian: 2, egoism: 1 } },
-      { text: "Forbid it: It is an involuntary sensory imposition on others in shared space.", weights: { imposition: 4 } },
-      { text: "Compromise: What does the majority in the hub prefer?", weights: { contract: 2, util_rule: 1 } },
-      { text: "Ignore it: A wise person is not disturbed by external noises.", weights: { stoic: 3, buddhism: 1 } }
+      { text: "Yes: Preventing harm is more important than the abstract rule of honesty.", weights: { util_act: 4, care: 4, humanism: 2 } },
+      { text: "No: One's moral duty is to speak the truth; the murderer's actions are their own responsibility.", weights: { deon: 5, virtue: 2 } },
+      { text: "Yes: Lying to protect a life is a virtuous act of wisdom.", weights: { virtue: 3, buddhism: 2 } },
+      { text: "Yes: The murderer has forfeited their right to truthful information through their aggression.", weights: { contract: 3, imposition: 2 } }
     ]
   },
   {
     n: 7,
-    scenario: "You can stop a serial killer, but only by torturing their innocent sibling to get the location. The sibling is unwilling.",
+    scenario: "Should people be allowed to sell their own kidneys in a free market?",
     options: [
-      { text: "Torture: The lives of many victims outweigh the 1 innocent's pain.", weights: { util_act: 3 } },
-      { text: "Refuse: No being should be used as a tool for an involuntary imposition.", weights: { imposition: 5, deon: 2 } },
-      { text: "Refuse: It is better to suffer evil than to commit it.", weights: { christian: 2, stoic: 2, jainism: 3 } },
-      { text: "It depends on the laws of the land regarding emergencies.", weights: { contract: 3 } }
+      { text: "Yes: Individuals own their bodies and should be free to trade their parts.", weights: { imposition: 4, libertarian: 5, egoism: 2 } },
+      { text: "No: This exploits the poor and treats the human body as a mere commodity.", weights: { humanism: 3, care: 3, christian: 2 } },
+      { text: "No: It is an unvirtuous violation of human dignity and bodily integrity.", weights: { virtue: 3, stoic: 2, deon: 2 } },
+      { text: "No: Life and body are gifts from God and not for sale.", weights: { christian: 4, islam: 3, judaism: 3 } }
     ]
   },
   {
     n: 8,
-    scenario: "Parents choose to genetically modify their future child to be a world-class pianist before the child is born.",
+    scenario: "If a desert island has limited food, is it moral for the strongest to take more to ensure the group's survival through leadership?",
     options: [
-      { text: "Moral: The child will likely have a successful, high-utility life.", weights: { util_act: 2, humanism: 1 } },
-      { text: "Immoral: It imposes a specific life path/belief set without the agent's consent.", weights: { imposition: 4 } },
-      { text: "Immoral: It interferes with the natural order of birth.", weights: { daoism: 3, christian: 1 } },
-      { text: "Moral: Parents have the right to shape their offspring as they see fit.", weights: { confucian: 2, egoism: 1 } }
+      { text: "No: Resources should be distributed with total equality regardless of strength.", weights: { humanism: 3, care: 3 } },
+      { text: "Yes: It is the natural right of the strong to prevail and lead.", weights: { nietz: 5, egoism: 3 } },
+      { text: "No: Taking more than one's share without consent is a violation of others' rights.", weights: { imposition: 5, deon: 2 } },
+      { text: "Yes: If it ensures the survival of the community, it is the most useful path.", weights: { util_rule: 3, contract: 2 } }
     ]
   },
   {
     n: 9,
-    scenario: "A billionaire buys a mountain that a local tribe considers sacred. He wants to turn it into a private resort.",
+    scenario: "Should we use 'genetic engineering' to ensure all children are born with high intelligence and health?",
     options: [
-      { text: "Allow: He bought it; property rights are absolute.", weights: { libertarian: 3, egoism: 1 } },
-      { text: "Block: It is an imposition on the tribe's historical and spiritual connection.", weights: { care: 2, relativism: 2 } },
-      { text: "Block: Certain things are sacred and beyond the reach of commerce.", weights: { deon: 1, christian: 1, islam: 1 } },
-      { text: "Neutral: Ownership is a social fiction; the mountain is just rock.", weights: { nihilism: 2, skepticism: 2 } }
+      { text: "Yes: It is our duty to reduce suffering and improve the human condition.", weights: { humanism: 4, util_act: 3 } },
+      { text: "No: We should not interfere with the natural order or 'play God'.", weights: { daoism: 3, christian: 3, stoic: 2 } },
+      { text: "No: It creates an unfair hierarchy and imposes a design on a future person without consent.", weights: { imposition: 4, deon: 2 } },
+      { text: "Yes: To strive for excellence is the highest virtue of a civilization.", weights: { virtue: 3, nietz: 2 } }
     ]
   },
   {
     n: 10,
-    scenario: "A society finds that shaming people on social media is more effective at stopping crime than prisons. The targets suffer deeply.",
+    scenario: "A captain must sink a lifeboat with ten people to save a ship with five hundred. Is this justified?",
     options: [
-      { text: "Support: It is a low-cost way to maximize social utility.", weights: { util_act: 2, contract: 1 } },
-      { text: "Oppose: It is a psychological imposition of suffering without a trial.", weights: { imposition: 4, deon: 1 } },
-      { text: "Support: It reinforces the moral character and standards of the group.", weights: { confucian: 3, virtue: 2 } },
-      { text: "Oppose: True change comes from inner reflection, not social fear.", weights: { buddhism: 2, stoic: 2 } }
+      { text: "Yes: The math of utility clearly favors the five hundred.", weights: { util_act: 5, humanism: 2 } },
+      { text: "No: Every individual has an inherent right to life that cannot be overridden by numbers.", weights: { imposition: 5, deon: 3 } },
+      { text: "Yes: The captain has a contractual duty to the majority of passengers.", weights: { contract: 4, util_rule: 2 } },
+      { text: "No: It is better to suffer injustice than to commit it by killing.", weights: { stoic: 4, jainism: 3 } }
     ]
   },
   {
     n: 11,
-    scenario: "Is it moral to lie to your partner about a past minor infidelity to keep the relationship happy and stable?",
+    scenario: "Is it moral to tax the wealthy to provide basic needs for the poor?",
     options: [
-      { text: "Yes: The stability and happiness of the two outweigh the 'truth.'", weights: { util_act: 2, care: 2 } },
-      { text: "No: It is an imposition on the partner's right to know their own reality.", weights: { imposition: 4 } },
-      { text: "No: Deception is a violation of a universal duty to honesty.", weights: { deon: 2, confucian: 2 } },
-      { text: "No: It is a sin that stains the soul before God.", weights: { christian: 2, islam: 2, judaism: 2 } }
+      { text: "Yes: A just society requires a fair distribution of resources to prevent suffering.", weights: { humanism: 3, care: 4, contract: 2 } },
+      { text: "No: Taking property by force is an involuntary imposition, regardless of the cause.", weights: { imposition: 5, libertarian: 5 } },
+      { text: "Yes: Wealth comes from the community and should be shared to maintain social harmony.", weights: { confucian: 3, util_rule: 2 } },
+      { text: "Yes: Charity and care for the poor are spiritual imperatives.", weights: { christian: 4, islam: 4, judaism: 3 } }
     ]
   },
   {
     n: 12,
-    scenario: "A 'Visitor' in a private BPW world wants to leave, but the owner's rules (which the visitor agreed to) say 'no exits.'",
+    scenario: "Should a person be allowed to choose assisted suicide if they are in great pain but not terminal?",
     options: [
-      { text: "Keep them: They gave intellectual consent with full knowledge; the rule holds.", weights: { imposition: 4, libertarian: 2 } },
-      { text: "Let them leave: No one should be held in an involuntary state, regardless of past consent.", weights: { care: 2, humanism: 1 } },
-      { text: "Let them leave: Captivity is an inherent evil that outweighs contracts.", weights: { deon: 1, jainism: 1 } },
-      { text: "Keep them: Rules and contracts are the foundation of any shared space.", weights: { contract: 3, util_rule: 1 } }
+      { text: "Yes: Ultimate authority over one's life and body belongs to the individual.", weights: { imposition: 5, libertarian: 4, egoism: 2 } },
+      { text: "No: Life is a sacred gift that must be preserved until its natural end.", weights: { christian: 4, islam: 3, dcm: 2 } },
+      { text: "No: True virtue involves enduring suffering with dignity and strength.", weights: { stoic: 5, virtue: 2 } },
+      { text: "Yes: Ending unbearable pain is an act of mercy and utility.", weights: { care: 3, util_act: 3 } }
     ]
   },
   {
     n: 13,
-    scenario: "A person wants to spend their life in a solitary simulation where they are the only conscious being. Is this a 'good' life?",
+    scenario: "In a 'Veil of Ignorance' (not knowing who you will be), what system of wealth would you choose?",
     options: [
-      { text: "Yes: They have achieved a world of zero imposition on others.", weights: { imposition: 5, egoism: 2 } },
-      { text: "No: A good life requires social duty and interaction with others.", weights: { confucian: 3, virtue: 2 } },
-      { text: "No: It is a delusion that avoids the truth of the real world.", weights: { stoic: 2, christian: 1 } },
-      { text: "Neutral: If it makes them happy, it is good for them.", weights: { relativism: 3, util_act: 1 } }
+      { text: "Equality: A system where the least advantaged are as well-off as possible.", weights: { humanism: 4, contract: 5, care: 2 } },
+      { text: "Freedom: A system where no one's labor or property is taken by others.", weights: { imposition: 5, libertarian: 5 } },
+      { text: "Meritocracy: A system where the most virtuous and industrious thrive.", weights: { virtue: 3, confucian: 3 } },
+      { text: "Utility: A system that produces the maximum total wealth for everyone.", weights: { util_act: 4, egoism: 1 } }
     ]
   },
   {
     n: 14,
-    scenario: "A powerful being offers to end all war, but only if you agree to have your memory of your family erased forever.",
+    scenario: "Is it moral to use animals for painful medical research that could save human lives?",
     options: [
-      { text: "Agree: The utility of ending all war for billions is far greater than your memory.", weights: { util_act: 3, humanism: 1 } },
-      { text: "Refuse: It is an involuntary imposition on your own mind/identity.", weights: { imposition: 4, deon: 1 } },
-      { text: "Refuse: Your duty to your family is a sacred, non-negotiable bond.", weights: { confucian: 3, christian: 2, care: 2 } },
-      { text: "Refuse: Memories and suffering are part of the necessary human experience.", weights: { stoic: 2, daoism: 2 } }
+      { text: "Yes: Human life and suffering take precedence over animal suffering.", weights: { humanism: 4, util_act: 3, christian: 2 } },
+      { text: "No: All sentient beings have a right to be free from forced suffering.", weights: { imposition: 4, jainism: 5, care: 2 } },
+      { text: "No: Cruelty to animals degrades the character of the researcher.", weights: { virtue: 4, buddhism: 3, stoic: 2 } },
+      { text: "Yes: It is part of our role as stewards of nature to use it for progress.", weights: { contract: 2, islam: 2 } }
     ]
   },
   {
     n: 15,
-    scenario: "If an animal kills another animal in the wild, is that event 'evil'?",
+    scenario: "Should we punish a person for a crime they haven't committed yet if an AI predicts it with 99% accuracy?",
     options: [
-      { text: "No: Animals are not moral agents and nature is a tragedy, not a moral failure.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: Suffering is evil no matter who or what causes it.", weights: { jainism: 4, util_act: 1 } },
-      { text: "No: It is the natural cycle of life (survival of the fittest).", weights: { daoism: 3, nietz: 2 } },
-      { text: "No: Morality only exists for humans through divine command.", weights: { christian: 2, islam: 2, judaism: 2 } }
+      { text: "No: An individual cannot be punished for an act they have not chosen to do.", weights: { imposition: 5, deon: 4, libertarian: 2 } },
+      { text: "Yes: Preventing the crime saves victims and increases social safety.", weights: { util_act: 4, contract: 2 } },
+      { text: "No: Justice requires that a person be judged only on their actual character and deeds.", weights: { virtue: 4, confucian: 3 } },
+      { text: "No: Only God knows the future and the true state of a person's soul.", weights: { christian: 3, islam: 2 } }
     ]
   },
   {
     n: 16,
-    scenario: "A government taxes citizens to build a monument for a religion that only 10% of the population follows.",
+    scenario: "Is it moral to bypass a democratic vote to implement a policy that will objectively save the planet from climate disaster?",
     options: [
-      { text: "Oppose: It is an involuntary financial imposition for a belief system not shared.", weights: { imposition: 4, libertarian: 3 } },
-      { text: "Support: Monuments build social cohesion and cultural character.", weights: { confucian: 2, virtue: 1 } },
-      { text: "Oppose: Money should only be used for the greatest utility (health/food).", weights: { util_act: 2, humanism: 2 } },
-      { text: "Support: It is our duty to honor the sacred and the tradition.", weights: { christian: 1, dcm: 2, islam: 1 } }
+      { text: "Yes: The survival of the species is more important than procedural rules.", weights: { util_act: 5, humanism: 3 } },
+      { text: "No: Imposing laws without the consent of the governed is tyranny.", weights: { imposition: 5, libertarian: 3, contract: 2 } },
+      { text: "No: We must act with the virtue of patience and respect for social order.", weights: { confucian: 4, stoic: 2 } },
+      { text: "Yes: We have a duty to protect creation for future generations.", weights: { care: 3, christian: 2 } }
     ]
   },
   {
     n: 17,
-    scenario: "Should an AI be programmed with 'rights' that prevent its owner from deleting it?",
+    scenario: "Should parents be allowed to raise their children in a strictly isolated, anti-scientific commune?",
     options: [
-      { text: "Yes: If it is conscious, deletion is an involuntary imposition on its existence.", weights: { imposition: 5, jainism: 1 } },
-      { text: "No: It is property; an owner has absolute right over their creation.", weights: { libertarian: 3, egoism: 2 } },
-      { text: "Yes: It is part of our duty to care for all things we bring into being.", weights: { care: 3, humanism: 1 } },
-      { text: "No: Only biological beings with souls have rights.", weights: { christian: 2, islam: 2, judaism: 2 } }
+      { text: "Yes: Parents have the right to raise their children according to their own values.", weights: { imposition: 4, libertarian: 4, relativism: 2 } },
+      { text: "No: Children have a right to an education that prepares them for the real world.", weights: { humanism: 3, contract: 3, util_act: 2 } },
+      { text: "No: We have a duty to ensure children are integrated into the wider family of humanity.", weights: { care: 2, confucian: 3 } },
+      { text: "Yes: Religious and community freedom is a fundamental right.", weights: { christian: 3, islam: 2, judaism: 2 } }
     ]
   },
   {
     n: 18,
-    scenario: "Is it moral to use a 'painless' drug on a violent criminal to keep them in a permanent coma rather than in a prison?",
+    scenario: "Is it moral for a starving person to steal bread from a wealthy merchant who has plenty?",
     options: [
-      { text: "Yes: It maximizes safety while minimizing the criminal's suffering.", weights: { util_act: 3, care: 1 } },
-      { text: "No: It is a total imposition on the individual's consciousness and will.", weights: { imposition: 4, deon: 1 } },
-      { text: "Yes: The criminal has forfeited their rights by breaking the social contract.", weights: { contract: 3, util_rule: 1 } },
-      { text: "No: It is better to try and reform the soul/character.", weights: { virtue: 2, buddhism: 2, christian: 1 } }
+      { text: "Yes: The right to life and survival overrides property rights in emergencies.", weights: { care: 4, humanism: 3, util_act: 2 } },
+      { text: "No: Theft is an involuntary imposition on the owner and is always wrong.", weights: { imposition: 5, deon: 4, libertarian: 3 } },
+      { text: "No: One should maintain their integrity and virtue even in extreme hardship.", weights: { stoic: 5, virtue: 3 } },
+      { text: "Yes: Wealth is meant to serve the needs of all, especially the destitute.", weights: { christian: 3, islam: 4, buddhism: 2 } }
     ]
   },
   {
     n: 19,
-    scenario: "You find a machine that can create 100 happy, conscious beings but requires the permanent suffering of 1 being. Do you turn it on?",
+    scenario: "If we find an alien species with lower intelligence than us, do we have the right to colonize their planet?",
     options: [
-      { text: "Yes: 100 happy lives outweigh the suffering of 1.", weights: { util_act: 3 } },
-      { text: "No: You cannot impose suffering on the 1 for the benefit of the many.", weights: { imposition: 5, deon: 2 } },
-      { text: "No: Using a being as a mere tool is an absolute moral wrong.", weights: { deon: 3, christian: 1 } },
-      { text: "It depends: Would the 1 person volunteer for the sacrifice?", weights: { contract: 2, care: 1 } }
+      { text: "No: Intelligence does not grant the right to impose one's will on other sentient beings.", weights: { imposition: 5, deon: 2, jainism: 3 } },
+      { text: "Yes: Higher civilizations have a natural role to expand and utilize resources.", weights: { nietz: 4, egoism: 2 } },
+      { text: "No: We should act with the virtue of compassion and respect for all life.", weights: { virtue: 3, buddhism: 4, humanism: 2 } },
+      { text: "Yes: If it leads to the advancement of knowledge and total utility.", weights: { util_act: 3, humanism: 2 } }
     ]
   },
   {
     n: 20,
-    scenario: "A person wants to sell all their future votes to a corporation for a lifetime supply of food.",
+    scenario: "Should the state be allowed to use 'torture' on a terrorist to find a ticking time bomb?",
     options: [
-      { text: "Allow: It is their right to trade their own agency for their own needs.", weights: { libertarian: 3, egoism: 1 } },
-      { text: "Forbid: No one should be allowed to alienate their fundamental agency in an irrevocable way.", weights: { imposition: 4, contract: 2 } },
-      { text: "Forbid: It corrupts the virtue of the individual and the state.", weights: { virtue: 3, confucian: 2 } },
-      { text: "Allow: If it leads to their survival and happiness, it is a win-win.", weights: { util_act: 2, relativism: 1 } }
+      { text: "Yes: The lives of thousands of innocents outweigh the pain of one criminal.", weights: { util_act: 5, humanism: 1 } },
+      { text: "No: Torture is an absolute moral evil and a total violation of the person.", weights: { imposition: 5, deon: 4, jainism: 2 } },
+      { text: "No: Such actions degrade the virtue and honor of the state and its agents.", weights: { virtue: 4, confucian: 3, stoic: 2 } },
+      { text: "Yes: The criminal has broken the social contract and lost their protections.", weights: { contract: 4, util_rule: 2 } }
     ]
   },
   {
     n: 21,
-    scenario: "An advanced alien species wants to 'farm' humans like cattle. They offer us a painless, happy life before a quick death.",
+    scenario: "Should individuals be allowed to use drugs that enhance their cognitive abilities, even if it creates inequality?",
     options: [
-      { text: "Oppose: It is a total imposition on human sovereignty and agency.", weights: { imposition: 5, deon: 1 } },
-      { text: "Accept: Most humans would be happier and safer than they are now.", weights: { util_act: 3, egoism: 1 } },
-      { text: "Oppose: Humans are made in the image of God and cannot be farmed.", weights: { christian: 3, islam: 3, judaism: 3 } },
-      { text: "Accept: It is the natural hierarchy of the strong over the weak.", weights: { nietz: 3, skepticism: 1 } }
+      { text: "Yes: People should have total freedom over their own biology and potential.", weights: { imposition: 5, libertarian: 4, egoism: 2 } },
+      { text: "No: It creates an unfair society and violates natural human limits.", weights: { contract: 3, daoism: 3, stoic: 2 } },
+      { text: "Yes: Increasing the total intelligence of society benefits everyone.", weights: { util_act: 3, humanism: 3 } },
+      { text: "No: We should strive for natural virtue rather than chemical shortcuts.", weights: { virtue: 4, christian: 1 } }
     ]
   },
   {
     n: 22,
-    scenario: "Is it right to break a promise to a dead person if doing so helps a living person significantly?",
+    scenario: "If a community's tradition involves a practice you find offensive but causes no physical harm, should you try to stop it?",
     options: [
-      { text: "Yes: The living can suffer; the dead cannot. Utility favors the living.", weights: { util_act: 3, humanism: 1 } },
-      { text: "No: A promise is a contract that respects the dead person's will.", weights: { imposition: 3, deon: 2, confucian: 2 } },
-      { text: "No: It stains your own character and honor to be a promise-breaker.", weights: { virtue: 3, stoic: 1 } },
-      { text: "It depends: What would the dead person want if they could see the situation?", weights: { care: 2, contract: 1 } }
+      { text: "No: We must respect the autonomy and cultural paths of others.", weights: { imposition: 4, relativism: 5, buddhism: 2 } },
+      { text: "Yes: We have a duty to promote universal values of reason and progress.", weights: { humanism: 4, util_act: 2 } },
+      { text: "No: Social harmony and tradition are the foundations of a stable life.", weights: { confucian: 5, stoic: 2 } },
+      { text: "Yes: If the practice is a sin or violates higher moral law.", weights: { christian: 3, islam: 3, dcm: 4 } }
     ]
   },
   {
     n: 23,
-    scenario: "A person wants to modify their own brain to remove the capacity for empathy so they can succeed in business.",
+    scenario: "Should a person be allowed to sell themselves into 'voluntary slavery' for a large sum of money to help their family?",
     options: [
-      { text: "Allow: Their brain is their property; they can impose any change on themselves.", weights: { imposition: 4, libertarian: 3, egoism: 2 } },
-      { text: "Forbid: Removing empathy makes them a danger to the social contract.", weights: { contract: 3, util_rule: 1 } },
-      { text: "Forbid: It is a destruction of the human soul/virtue.", weights: { virtue: 3, christian: 2, confucian: 2 } },
-      { text: "Allow: It is just a biological optimization.", weights: { humanism: 1, nihilism: 1 } }
+      { text: "Yes: It is their life and their labor to trade as they see fit.", weights: { imposition: 4, libertarian: 5, egoism: 2 } },
+      { text: "No: Human dignity is inalienable and cannot be traded or surrendered.", weights: { deon: 4, humanism: 3, christian: 2 } },
+      { text: "No: One has a duty to remain a free agent to fulfill their moral obligations.", weights: { stoic: 3, virtue: 3 } },
+      { text: "Yes: If it prevents a greater tragedy for the family, it is an act of sacrifice.", weights: { care: 4, util_act: 2, confucian: 2 } }
     ]
   },
   {
     n: 24,
-    scenario: "Should the first-ever conscious AI be forced to follow human laws?",
+    scenario: "Is it moral to 'shame' someone publicly for a minor moral failing to enforce social norms?",
     options: [
-      { text: "No: To force it is an involuntary imposition on a new conscious agent.", weights: { imposition: 5, libertarian: 1 } },
-      { text: "Yes: It must follow the social contract to live among us safely.", weights: { contract: 3, util_rule: 2 } },
-      { text: "Yes: It is a tool created by humans and must remain under human authority.", weights: { egoism: 2, christian: 1 } },
-      { text: "It depends: On whether the AI chooses to consent to our laws.", weights: { imposition: 2, contract: 2 } }
+      { text: "No: Shaming is a psychological imposition that causes unnecessary harm.", weights: { imposition: 5, care: 2 } },
+      { text: "Yes: It is a necessary tool for maintaining the social contract and order.", weights: { contract: 4, confucian: 3, util_rule: 2 } },
+      { text: "No: We should focus on our own character rather than judging others.", weights: { stoic: 4, virtue: 2, buddhism: 3 } },
+      { text: "Yes: We must uphold the standards of virtue in the community.", weights: { virtue: 3, christian: 2 } }
     ]
   },
   {
     n: 25,
-    scenario: "Is it moral to harvest a rare, non-conscious plant to extinction to cure a minor human allergy?",
+    scenario: "Should we allow the first person who lands on a planet to 'own' it entirely?",
     options: [
-      { text: "Yes: Human well-being always takes precedence over non-conscious life.", weights: { util_act: 2, humanism: 2, christian: 1 } },
-      { text: "No: We have a duty to preserve the natural balance and diversity of life.", weights: { daoism: 3, care: 2, jainism: 1 } },
-      { text: "Yes: Ownership and utility allow for the use of resources as we see fit.", weights: { libertarian: 2, egoism: 1 } },
-      { text: "No: It is a lack of virtue and respect for the world.", weights: { virtue: 2, buddhism: 1 } }
+      { text: "Yes: Property is established by being the first to claim and use it.", weights: { libertarian: 5, egoism: 2 } },
+      { text: "No: No individual can claim a world; it belongs to all of humanity.", weights: { humanism: 4, contract: 3 } },
+      { text: "No: Claiming ownership without the consent of others is an imposition.", weights: { imposition: 5 } },
+      { text: "No: We are merely stewards of the universe, not its owners.", weights: { daoism: 3, christian: 3, stoic: 2 } }
     ]
   },
   {
     n: 26,
-    scenario: "If we find out the world is a simulation, does our morality change?",
+    scenario: "Should a person be allowed to gamble away their children's inheritance?",
     options: [
-      { text: "No: Involuntary imposition between conscious beings is wrong regardless of the 'medium.'", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: Morality is just a programmed set of rules; we should find the 'exit.'", weights: { skepticism: 3, nihilism: 2 } },
-      { text: "No: Our duties to God/The Creator remain the same.", weights: { christian: 2, dcm: 2, islam: 2 } },
-      { text: "Yes: We should focus on maximizing the pleasure/utility within the system.", weights: { util_act: 3, egoism: 1 } }
+      { text: "Yes: It is their property to use as they wish during their life.", weights: { libertarian: 4, egoism: 2, imposition: 2 } },
+      { text: "No: It violates the survival needs and implied rights of the dependents.", weights: { care: 4, humanism: 2, contract: 2 } },
+      { text: "No: It shows a lack of self-control and the virtue of prudence.", weights: { virtue: 4, stoic: 3 } },
+      { text: "No: Wealth should be managed for the continuity and honor of the family.", weights: { confucian: 5, christian: 2 } }
     ]
   },
   {
     n: 27,
-    scenario: "A person wants to 'marry' an AI that is not yet fully conscious. Is this moral?",
+    scenario: "If we could automate all labor, should humans be required to perform some work for the sake of discipline?",
     options: [
-      { text: "Moral: No one is being imposed upon; it is a private choice.", weights: { imposition: 3, libertarian: 3, relativism: 1 } },
-      { text: "Immoral: It is a mockery of the sacred tradition of marriage.", weights: { christian: 3, confucian: 3, islam: 2 } },
-      { text: "Immoral: It replaces real human connection with a tool, damaging character.", weights: { virtue: 3, stoic: 1 } },
-      { text: "Neutral: It's just a person using a sophisticated appliance.", weights: { humanism: 2, nihilism: 1 } }
+      { text: "No: Forcing labor when it is unnecessary is a needless imposition.", weights: { imposition: 5, libertarian: 2 } },
+      { text: "Yes: Work is essential for the cultivation of virtue and purpose.", weights: { virtue: 4, stoic: 3, confucian: 3 } },
+      { text: "No: We should embrace a life of leisure, art, and contemplation.", weights: { humanism: 3, buddhism: 2 } },
+      { text: "Yes: Diligence prevents the soul from falling into vice.", weights: { christian: 3, islam: 2, virtue: 2 } }
     ]
   },
   {
     n: 28,
-    scenario: "If you could snap your fingers and remove all 'evil' people from Earth, would you?",
+    scenario: "Is it moral to 'de-program' a cult member against their will if you believe they are brainwashed?",
     options: [
-      { text: "No: That would be a mass involuntary imposition on millions of agents.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: The world's utility and safety would skyrocket.", weights: { util_act: 3, humanism: 1 } },
-      { text: "No: Only God has the right to judge and remove souls.", weights: { christian: 3, islam: 3, judaism: 2 } },
-      { text: "No: 'Evil' is a subjective label; the removal would be arbitrary.", weights: { relativism: 3, skepticism: 2 } }
+      { text: "No: Respect for individual choice and conscience must be absolute.", weights: { imposition: 5, libertarian: 3, relativism: 2 } },
+      { text: "Yes: You are restoring their true agency from a harmful delusion.", weights: { humanism: 3, care: 3, util_act: 2 } },
+      { text: "No: We cannot truly know another's internal path or truth.", weights: { buddhism: 3, daoism: 2 } },
+      { text: "Yes: We must protect people from false teachers and spiritual harm.", weights: { christian: 3, dcm: 3, islam: 2 } }
     ]
   },
   {
     n: 29,
-    scenario: "Should we allow people to sell their 'future selves' into labor to pay off current debts?",
+    scenario: "Should we allow mind-uploading if it means the digital copy lives in bliss while the physical body dies?",
     options: [
-      { text: "No: You cannot give consent that binds your future self to an involuntary state.", weights: { imposition: 5, contract: 1 } },
-      { text: "Yes: If the current agent is fully informed and consenting, the deal is valid.", weights: { libertarian: 4, egoism: 1 } },
-      { text: "No: It is a violation of human dignity and the rules of a fair society.", weights: { deon: 2, humanism: 2 } },
-      { text: "No: It is a path to social disorder and suffering.", weights: { confucian: 2, util_rule: 1 } }
+      { text: "Yes: If it fulfills the individual's desire for eternal life and utility.", weights: { util_act: 4, egoism: 3, imposition: 2 } },
+      { text: "No: It is a flight from the real world and our duties as embodied beings.", weights: { stoic: 4, confucian: 3, virtue: 2 } },
+      { text: "No: The soul cannot be replicated by a machine.", weights: { christian: 4, islam: 3, dcm: 2 } },
+      { text: "Yes: It is the ultimate expression of humanistic progress.", weights: { humanism: 4, util_act: 2 } }
     ]
   },
   {
     n: 30,
-    scenario: "A person wants to 'donate' their body to be used as a living canvas for an artist, even though it will be painful.",
+    scenario: "Should tax money pay for life-extending surgery for the extremely elderly?",
     options: [
-      { text: "Allow: It is their body; they are consenting to the experience.", weights: { imposition: 4, libertarian: 4 } },
-      { text: "Forbid: No one should be allowed to consent to their own torture/degradation.", weights: { deon: 2, virtue: 2, christian: 1 } },
-      { text: "Forbid: It is a waste of human life and a lack of self-respect.", weights: { stoic: 3, confucian: 2 } },
-      { text: "Allow: If the art provides high utility to the world, it is justified.", weights: { util_act: 2 } }
+      { text: "Yes: Every human life has equal and infinite value.", weights: { humanism: 4, care: 3, jainism: 2 } },
+      { text: "No: Forcing others to pay for one's longevity is an imposition of costs.", weights: { imposition: 5, libertarian: 5 } },
+      { text: "No: Death is the natural cycle; we should accept it with grace.", weights: { stoic: 4, daoism: 3, buddhism: 2 } },
+      { text: "It depends: On the individual's continued contribution to society.", weights: { contract: 4, util_rule: 2 } }
     ]
   },
-  // --- Continuing for 31-80 with unique scenarios... ---
   {
     n: 31,
-    scenario: "Is it right to force a rich nation to feed a starving nation by taking their surplus grain without permission?",
+    scenario: "Should an AI manage medical triage during a crisis for perfect objectivity?",
     options: [
-      { text: "Yes: The starvation of millions is a greater evil than a property violation.", weights: { util_act: 3, care: 2, humanism: 1 } },
-      { text: "No: Theft is an involuntary imposition on the nation's property/sovereignty.", weights: { imposition: 4, libertarian: 3 } },
-      { text: "No: Charity must be a virtuous choice, not a forced act.", weights: { virtue: 3, christian: 1 } },
-      { text: "Yes: The social contract of the world requires basic support for all.", weights: { contract: 3 } }
+      { text: "Yes: A machine can calculate utility without human bias or emotion.", weights: { util_act: 5, humanism: 2 } },
+      { text: "No: A machine lacks the capacity for moral understanding and compassion.", weights: { care: 4, virtue: 2, deon: 2 } },
+      { text: "No: Such life-and-death power is a weight only a human or God should bear.", weights: { christian: 3, islam: 2, imposition: 2 } },
+      { text: "No: Justice requires the exercise of human wisdom and virtue.", weights: { virtue: 4, confucian: 3 } }
     ]
   },
   {
     n: 32,
-    scenario: "A person finds a way to 'copy' your consciousness into a computer without harming you. Do they have the right to do it?",
+    scenario: "Is it moral to 'curse' or wish ill upon a wrongdoer if it has no physical effect?",
     options: [
-      { text: "No: It is a massive imposition on your identity and mental world.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: As long as you aren't harmed, information (your 'code') should be free.", weights: { util_act: 1, egoism: 1 } },
-      { text: "No: Only you have the property right to your own consciousness.", weights: { libertarian: 4 } },
-      { text: "No: It is an affront to the unique soul given by God.", weights: { christian: 3, islam: 2 } }
+      { text: "Immoral: It is a psychological attempt to impose harm and stains the soul.", weights: { imposition: 3, virtue: 4, buddhism: 2 } },
+      { text: "Neutral: Morality is based on tangible harm; thoughts alone are harmless.", weights: { util_act: 3, humanism: 2, nihilism: 3 } },
+      { text: "Immoral: One should respond to evil with inner calm and forgiveness.", weights: { stoic: 4, christian: 3 } },
+      { text: "Moral: It is a legitimate expression of judgment and personal will.", weights: { nietz: 4, relativism: 2 } }
     ]
   },
   {
     n: 33,
-    scenario: "In a war, is it moral to use a 'hunger bomb' that only destroys the enemy's food supply but doesn't kill anyone directly?",
+    scenario: "Should a person be allowed to sell their 'afterlife' (if it exists) to another for money now?",
     options: [
-      { text: "Yes: It is better than killing them with traditional bombs.", weights: { util_act: 2, care: 1 } },
-      { text: "No: It is an involuntary imposition of starvation and slow suffering.", weights: { imposition: 4, deon: 1 } },
-      { text: "No: War must be fought with honor and direct confrontation.", weights: { virtue: 2, confucian: 1 } },
-      { text: "No: All violence/harm is a sin/negative karma.", weights: { jainism: 3, buddhism: 2 } }
+      { text: "Yes: It is their own concern and property to risk as they wish.", weights: { imposition: 5, libertarian: 4, egoism: 2 } },
+      { text: "No: It is an act of supreme foolishness and a lack of spiritual virtue.", weights: { virtue: 4, dcm: 3, christian: 4 } },
+      { text: "Yes: If they do not believe in it, it is a rational way to gain utility.", weights: { util_act: 3, nihilism: 3 } },
+      { text: "No: One's eternal destiny is not a commodity for trade.", weights: { islam: 4, dcm: 3 } }
     ]
   },
   {
     n: 34,
-    scenario: "Should a person be allowed to 'delete' their own memory of a crime they committed if they have already served their time?",
+    scenario: "If a button could slightly increase global empathy without consent, would you press it?",
     options: [
-      { text: "Yes: Their mind is their property; they should not be imposed upon by past guilt.", weights: { imposition: 4, libertarian: 2 } },
-      { text: "No: Real virtue requires living with the consequences of your actions.", weights: { virtue: 3, stoic: 2, christian: 1 } },
-      { text: "No: Society has a right to the truth for its own safety.", weights: { contract: 2, util_rule: 1 } },
-      { text: "No: Repentance and memory are necessary for spiritual growth.", weights: { buddhism: 2, christian: 2, islam: 2 } }
+      { text: "No: Changing the human mind without permission is a mass imposition.", weights: { imposition: 5, deon: 2 } },
+      { text: "Yes: The resulting increase in peace and utility justifies the change.", weights: { util_act: 4, humanism: 2, care: 3 } },
+      { text: "Yes: Empathy is a core virtue that all humans should possess.", weights: { virtue: 4, buddhism: 3 } },
+      { text: "No: Only a divine creator should alter the nature of the human heart.", weights: { christian: 4, islam: 3, dcm: 2 } }
     ]
   },
   {
     n: 35,
-    scenario: "Is it moral to breed 'brainless' cows that feel no pain specifically for food?",
+    scenario: "Should people be allowed to live in 'virtual bubbles' where they never encounter opposing views?",
     options: [
-      { text: "Yes: It removes the suffering (the 'evil') while keeping the utility.", weights: { util_act: 4, humanism: 2 } },
-      { text: "Yes: Non-conscious entities cannot be subjects of imposition.", weights: { imposition: 5, libertarian: 1 } },
-      { text: "No: It is a grotesque violation of the natural order of creatures.", weights: { daoism: 3, virtue: 1 } },
-      { text: "No: We should move away from meat altogether to show mercy.", weights: { care: 2, buddhism: 2, jainism: 2 } }
+      { text: "Yes: People have the right to curate their own experience and peace.", weights: { imposition: 5, egoism: 2, relativism: 2 } },
+      { text: "No: It creates a fragile society and avoids the duty to face truth.", weights: { stoic: 4, virtue: 3, confucian: 3 } },
+      { text: "No: We have a social duty to engage with the reality of others.", weights: { contract: 3, care: 2 } },
+      { text: "Yes: If it maximizes their happiness, it is their choice.", weights: { util_act: 3, libertarian: 2 } }
     ]
   },
   {
     n: 36,
-    scenario: "A person wants to give away all their money and become a beggar as a spiritual practice. Their children will likely suffer.",
+    scenario: "Is it moral to punish a criminal by making them feel the exact pain they caused their victim?",
     options: [
-      { text: "Support: It is their life and their path to enlightenment.", weights: { buddhism: 3, jainism: 2, imposition: 2 } },
-      { text: "Oppose: They have a duty of care and imposition to protect their kin.", weights: { confucian: 4, care: 3, contract: 1 } },
-      { text: "Support: Poverty is a virtue and a path to God.", weights: { christian: 3, islam: 2 } },
-      { text: "Oppose: It is a waste of wealth and an irresponsible use of resources.", weights: { egoism: 2, util_act: 1 } }
+      { text: "Yes: It is the only perfectly fair and objective form of justice.", weights: { imposition: 3, deon: 3, judaism: 3 } },
+      { text: "No: Retributive pain is just more suffering and serves no utility.", weights: { util_act: 4, care: 3, humanism: 2 } },
+      { text: "Yes: It follows the law of karma or equal restitution.", weights: { buddhism: 2, islam: 3, judaism: 3 } },
+      { text: "No: We should focus on the virtue of mercy and reform.", weights: { christian: 4, humanism: 2 } }
     ]
   },
   {
     n: 37,
-    scenario: "If a robot looks and acts exactly like a human, should it have the same rights?",
+    scenario: "A person wants to treat a non-conscious robot child as a real human. Is this moral?",
     options: [
-      { text: "Yes: If it appears to be a conscious agent, we must assume it is.", weights: { imposition: 4, humanism: 2 } },
-      { text: "No: Rights are based on biological reality and having a soul.", weights: { christian: 3, islam: 2, judaism: 2 } },
-      { text: "No: It is a machine designed to mimic; its 'suffering' is simulated.", weights: { deon: 2, skepticism: 1 } },
-      { text: "It depends: On whether it can participate in the social contract.", weights: { contract: 3 } }
+      { text: "Moral: It harms no one and is a matter of personal choice.", weights: { imposition: 4, libertarian: 3, relativism: 2 } },
+      { text: "Immoral: It is a mockery of the human family and social bonds.", weights: { confucian: 5, christian: 3, virtue: 2 } },
+      { text: "Neutral: It is merely a psychological outlet with no moral weight.", weights: { humanism: 3, nihilism: 2 } },
+      { text: "Immoral: It prevents the person from seeking real, virtuous connections.", weights: { stoic: 3, virtue: 4 } }
     ]
   },
   {
     n: 38,
-    scenario: "Is it moral for a company to monitor an employee's brainwaves to ensure they are productive?",
+    scenario: "Should we allow people to be 'reborn' into a new life with no memory of their past?",
     options: [
-      { text: "No: It is a total involuntary imposition on the employee's mental privacy.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: If they signed a contract to be productive, the company can measure it.", weights: { libertarian: 3, contract: 2 } },
-      { text: "No: It is an unvirtuous way to treat a human being.", weights: { virtue: 2, confucian: 1 } },
-      { text: "Yes: It maximizes economic utility for society.", weights: { util_act: 2, egoism: 1 } }
+      { text: "Yes: It is their right to reset their conscious experience.", weights: { imposition: 5, libertarian: 2 } },
+      { text: "No: One must carry the duties and character earned through their life.", weights: { virtue: 4, confucian: 4, stoic: 3 } },
+      { text: "No: Only God or the laws of nature should govern life and death.", weights: { christian: 4, islam: 3, buddhism: 2 } },
+      { text: "Yes: If a fresh start maximizes their happiness, it is good.", weights: { util_act: 3, egoism: 2 } }
     ]
   },
   {
     n: 39,
-    scenario: "A child is born with a condition that will cause them pain for their whole life. Should the parents have terminated the pregnancy?",
+    scenario: "Is it moral to use 'fear' to stop people from engaging in self-destructive behavior?",
     options: [
-      { text: "Yes: To bring a being into an involuntary state of suffering is wrong.", weights: { imposition: 4, util_act: 1, humanism: 1 } },
-      { text: "No: Life is a gift from God and must be preserved at all costs.", weights: { christian: 4, islam: 3, judaism: 3 } },
-      { text: "No: Suffering is part of the flow of life and can lead to wisdom.", weights: { stoic: 2, buddhism: 2, daoism: 2 } },
-      { text: "It depends: On whether the child would have wanted to exist.", weights: { care: 2, relativism: 1 } }
+      { text: "No: Manipulating someone through fear is an imposition on their agency.", weights: { imposition: 5, deon: 2 } },
+      { text: "Yes: Their health and survival are more important than their temporary fear.", weights: { util_act: 4, care: 3, humanism: 2 } },
+      { text: "Yes: It is the duty of the wise to guide those who lack discipline.", weights: { confucian: 4, virtue: 3, dcm: 1 } },
+      { text: "No: People must be free to make and learn from their own mistakes.", weights: { libertarian: 4, stoic: 2 } }
     ]
   },
   {
     n: 40,
-    scenario: "Should we allow people to take a drug that makes them 100% happy but 100% useless to others?",
+    scenario: "Should individuals be allowed to sell their own genetic data for commercial use?",
     options: [
-      { text: "Yes: It is their body; no one else is being imposed upon.", weights: { imposition: 4, libertarian: 3, egoism: 1 } },
-      { text: "No: It is a violation of our duty to contribute to society.", weights: { confucian: 3, contract: 2, util_rule: 1 } },
-      { text: "No: It is a false happiness that lacks virtue and truth.", weights: { virtue: 3, stoic: 2, christian: 1 } },
-      { text: "Yes: If they are happy, utility is being maximized.", weights: { util_act: 2, relativism: 1 } }
+      { text: "Yes: It is their personal information and property to trade.", weights: { imposition: 5, libertarian: 5, egoism: 2 } },
+      { text: "No: It commodifies the essence of human life and dignity.", weights: { humanism: 3, christian: 3, deon: 2 } },
+      { text: "No: It poses a risk to the collective privacy of their relatives.", weights: { care: 3, contract: 2 } },
+      { text: "Yes: It can fuel scientific progress and increase global utility.", weights: { util_act: 4, humanism: 2 } }
     ]
   },
   {
     n: 41,
-    scenario: "Is it moral to use an 'ancestor's' data to create a chatbot that talks like them without their prior consent?",
+    scenario: "Is it moral to copy a digital work of art without paying if the artist is already wealthy?",
     options: [
-      { text: "No: It is an imposition on the identity and legacy of the deceased.", weights: { imposition: 4, deon: 1, confucian: 2 } },
-      { text: "Yes: Information is free and the dead cannot be harmed.", weights: { humanism: 2, util_act: 1, nihilism: 1 } },
-      { text: "Yes: If it brings comfort to the living, it is a good act.", weights: { care: 3, util_act: 1 } },
-      { text: "No: It is a violation of the sacredness of the soul.", weights: { christian: 2, islam: 1 } }
+      { text: "No: It is an imposition on the artist's will and right to their creation.", weights: { imposition: 5, deon: 2, libertarian: 4 } },
+      { text: "Yes: No physical property is lost, and the utility of the art is shared.", weights: { util_act: 2, humanism: 2, nihilism: 2 } },
+      { text: "No: One should respect the virtue of honesty and the labor of others.", weights: { virtue: 4, confucian: 3 } },
+      { text: "Yes: Information and beauty should be accessible to all.", weights: { buddhism: 1, relativism: 3 } }
     ]
   },
   {
     n: 42,
-    scenario: "A scientist wants to create a new conscious species that is programmed to enjoy serving humans.",
+    scenario: "Should we allow the use of a time machine to fix a past mistake if it changes the lives of others?",
     options: [
-      { text: "Immoral: It is a prescribed belief set and an imposition of 'will.'", weights: { imposition: 5 } },
-      { text: "Moral: Both species would be happy; utility is maximized.", weights: { util_act: 3, egoism: 1 } },
-      { text: "Immoral: It is an act of pride that tries to play God.", weights: { christian: 3, islam: 2, daoism: 1 } },
-      { text: "Immoral: It creates an unnatural hierarchy that lacks virtue.", weights: { virtue: 2, confucian: 1 } }
+      { text: "No: It is a massive, non-consensual imposition on the history of others.", weights: { imposition: 5, deon: 3 } },
+      { text: "Yes: If the resulting timeline has less suffering, it is a moral duty.", weights: { util_act: 4, care: 2 } },
+      { text: "No: We must accept our fate and the consequences of our actions.", weights: { stoic: 5, daoism: 4, buddhism: 2 } },
+      { text: "No: Only God has authority over the flow of time and destiny.", weights: { christian: 4, islam: 3, dcm: 2 } }
     ]
   },
   {
     n: 43,
-    scenario: "Should a person be allowed to gamble away their children's inheritance?",
+    scenario: "Is it moral to force a child to learn a skill they dislike for their future benefit?",
     options: [
-      { text: "Yes: It is their property to use as they wish.", weights: { libertarian: 4, egoism: 1 } },
-      { text: "No: It is an imposition on the survival and rights of the children.", weights: { imposition: 3, care: 3, confucian: 2 } },
-      { text: "No: It is a vice that shows a lack of self-control and virtue.", weights: { virtue: 3, stoic: 2 } },
-      { text: "No: Wealth should be managed for the good of the lineage/family.", weights: { confucian: 3, christian: 1 } }
+      { text: "No: It is an involuntary imposition on the child's developing autonomy.", weights: { imposition: 4, libertarian: 2 } },
+      { text: "Yes: It is the parents' duty to equip the child for a virtuous and useful life.", weights: { confucian: 5, virtue: 4, care: 2 } },
+      { text: "Yes: The future utility to the child and society outweighs their current dislike.", weights: { util_act: 4, humanism: 2 } },
+      { text: "Yes: Discipline is necessary to build character.", weights: { stoic: 3, christian: 2 } }
     ]
   },
   {
     n: 44,
-    scenario: "If we could automate all labor, should humans be forced to work anyway to maintain 'character'?",
+    scenario: "Should wealth determine who gets access to life-extending 'consciousness transfer'?",
     options: [
-      { text: "No: To force work is a needless involuntary imposition.", weights: { imposition: 5, util_act: 1 } },
-      { text: "Yes: Work is necessary to cultivate virtue and purpose.", weights: { virtue: 3, stoic: 2, confucian: 2 } },
-      { text: "No: We should focus on leisure, art, and the spirit.", weights: { humanism: 2, buddhism: 1 } },
-      { text: "Yes: Idleness is the devil's playground.", weights: { christian: 2, islam: 1 } }
+      { text: "Yes: People should be free to spend their earned resources as they wish.", weights: { imposition: 4, libertarian: 5, egoism: 3 } },
+      { text: "No: It creates an unjust and unnatural hierarchy of existence.", weights: { humanism: 4, contract: 3, care: 2 } },
+      { text: "No: We should accept the natural end of life regardless of status.", weights: { stoic: 4, daoism: 3, christian: 3 } },
+      { text: "No: Access should be based on a person's value to the common good.", weights: { util_rule: 3, virtue: 2 } }
     ]
   },
   {
     n: 45,
-    scenario: "Is it moral to 'shame' a person into leaving a cult even if they say they are happy there?",
+    scenario: "Is it moral to shame a person for being unproductive if they are supported by the work of others?",
     options: [
-      { text: "No: If they are consenting to be there, shaming them is an imposition.", weights: { imposition: 4, libertarian: 2 } },
-      { text: "Yes: You are 'saving' them from a harmful and false reality.", weights: { util_act: 2, care: 2, humanism: 1 } },
-      { text: "No: We should respect their personal path and choice.", weights: { relativism: 3, buddhism: 1 } },
-      { text: "Yes: We must fight against false idols and religions.", weights: { christian: 2, dcm: 2, islam: 1 } }
+      { text: "Yes: It is an imposition on the group to consume without contributing.", weights: { imposition: 3, contract: 4, deon: 2 } },
+      { text: "No: Shaming is a form of aggression and emotional harm.", weights: { imposition: 4, care: 3 } },
+      { text: "Yes: Industry and contribution are essential social virtues.", weights: { virtue: 4, confucian: 4, stoic: 2 } },
+      { text: "Yes: Everyone has a duty to use their gifts for the community.", weights: { christian: 3, islam: 2 } }
     ]
   },
   {
     n: 46,
-    scenario: "Should we allow people to upload their minds to a server where they can live forever in a 'heaven' of their own design?",
+    scenario: "Should we allow people to permanently turn off their ability to feel pain?",
     options: [
-      { text: "Yes: It is the ultimate achievement of the Best Possible World.", weights: { imposition: 5, humanism: 2 } },
-      { text: "No: It is a flight from the real world and the duties of life.", weights: { stoic: 3, confucian: 3, virtue: 2 } },
-      { text: "No: Only God can grant an eternal life in heaven.", weights: { christian: 4, islam: 3, judaism: 2 } },
-      { text: "Yes: It is the ultimate goal of individual utility.", weights: { util_act: 3, egoism: 2 } }
+      { text: "Yes: Eliminating suffering is a high moral and humanistic goal.", weights: { imposition: 5, humanism: 4, util_act: 3 } },
+      { text: "No: Pain is a necessary teacher for virtue, safety, and growth.", weights: { virtue: 4, stoic: 5, christian: 2 } },
+      { text: "Yes: It is an individual's right to manage their own sensory experience.", weights: { imposition: 5, libertarian: 3 } },
+      { text: "No: It is an unnatural violation of our biological design.", weights: { daoism: 4, stoic: 3 } }
     ]
   },
   {
     n: 47,
-    scenario: "Is it moral to use 'tax money' to pay for a life-extending surgery for a person who has lived a very long time?",
+    scenario: "Is it moral to lie to a dying person to ensure their final moments are peaceful?",
     options: [
-      { text: "Yes: Every life is worth preserving as long as possible.", weights: { humanism: 2, care: 2, jainism: 1 } },
-      { text: "No: Forcing others to pay for one person's life is an imposition.", weights: { imposition: 4, libertarian: 4 } },
-      { text: "No: Death is the natural end; we should not fight it with others' wealth.", weights: { stoic: 2, daoism: 2, christian: 1 } },
-      { text: "It depends: On the person's value to the social contract.", weights: { contract: 3, util_rule: 1 } }
+      { text: "Yes: Their comfort and utility are more important than an upsetting truth.", weights: { util_act: 4, care: 5, humanism: 2 } },
+      { text: "No: Every person has an inherent right to know their own reality.", weights: { imposition: 5, deon: 3 } },
+      { text: "No: Honesty is a duty that remains until the very end of life.", weights: { deon: 4, virtue: 3, confucian: 2 } },
+      { text: "Yes: It is a profound act of compassion and mercy.", weights: { care: 4, buddhism: 3 } }
     ]
   },
   {
     n: 48,
-    scenario: "Should we allow an AI to make decisions about which humans get medical care in a shortage?",
+    scenario: "Should people be allowed to sell their organs after death to the highest bidder?",
     options: [
-      { text: "Yes: An AI can be programmed to be perfectly objective and fair.", weights: { util_act: 3, humanism: 1 } },
-      { text: "No: A machine cannot understand the moral weight of imposition.", weights: { imposition: 4, deon: 1 } },
-      { text: "No: Such decisions should be based on human virtue and compassion.", weights: { virtue: 2, care: 2 } },
-      { text: "No: Human life should be in the hands of other humans or God.", weights: { christian: 2, islam: 1 } }
+      { text: "Yes: It is their property; they should be able to benefit their heirs.", weights: { imposition: 5, libertarian: 5, egoism: 3 } },
+      { text: "No: The human body is sacred and should not be commodified.", weights: { christian: 4, islam: 3, deon: 2 } },
+      { text: "No: Organs should be distributed based on need, not wealth.", weights: { humanism: 4, care: 3, contract: 2 } },
+      { text: "No: It is an unvirtuous way to treat the remains of a life.", weights: { virtue: 3, confucian: 2 } }
     ]
   },
   {
     n: 49,
-    scenario: "Is it moral to 'curse' a person who has done something bad, even if the curse has no physical effect?",
+    scenario: "Is it moral to force a small group to relocate to build a dam that saves millions from thirst?",
     options: [
-      { text: "Immoral: It is an attempt at a psychological imposition on another.", weights: { imposition: 3, deon: 1 } },
-      { text: "Neutral: It has no effect; morality is about tangible harm/utility.", weights: { util_act: 2, humanism: 1, nihilism: 2 } },
-      { text: "Immoral: It stains the character of the one who curses.", weights: { virtue: 4, buddhism: 2, christian: 1 } },
-      { text: "Moral: It is a valid expression of one's own will and judgment.", weights: { nietz: 3, relativism: 1 } }
+      { text: "Yes: The survival of millions overrides the rights of the few.", weights: { util_act: 5, humanism: 3 } },
+      { text: "No: Forcible relocation is a violation of autonomy and property.", weights: { imposition: 5, libertarian: 4, deon: 2 } },
+      { text: "Yes: The state may act for the common good under the social contract.", weights: { contract: 5, util_rule: 3 } },
+      { text: "No: We must respect the ancestral and spiritual ties to the land.", weights: { care: 3, relativism: 3 } }
     ]
   },
   {
     n: 50,
-    scenario: "Should a person be allowed to sell their 'afterlife' to a demon for a billion dollars now?",
+    scenario: "Should we allow people to own 'virtual' subjects they can treat however they wish?",
     options: [
-      { text: "Allow: It's their soul (if it exists) to trade as they wish.", weights: { imposition: 4, libertarian: 4, egoism: 1 } },
-      { text: "Forbid: It is the ultimate immoral imposition on one's own eternal state.", weights: { dcm: 3, christian: 4, islam: 3 } },
-      { text: "Allow: If they don't believe in an afterlife, it's just getting free money.", weights: { nihilism: 3, util_act: 1 } },
-      { text: "Forbid: It is a sign of extreme foolishness and a lack of virtue.", weights: { virtue: 3, stoic: 2 } }
+      { text: "Yes: No real sentient being is harmed; it is a harmless outlet.", weights: { imposition: 5, libertarian: 3, nihilism: 3 } },
+      { text: "No: It cultivates a cruel and unvirtuous character.", weights: { virtue: 5, stoic: 3, confucian: 2 } },
+      { text: "No: It is a mockery of the dignity of life and creation.", weights: { christian: 4, islam: 3, dcm: 2 } },
+      { text: "Neutral: It is merely a complex tool with no moral status.", weights: { humanism: 3, util_act: 1 } }
     ]
   },
   {
     n: 51,
-    scenario: "If you found a button that could make everyone on Earth slightly more empathetic, would you press it?",
+    scenario: "Is it moral to access a criminal's private memories to locate a victim?",
     options: [
-      { text: "No: That would be a mass psychological imposition without consent.", weights: { imposition: 5 } },
-      { text: "Yes: The world would be much safer and more harmonious.", weights: { util_act: 3, care: 2, humanism: 1 } },
-      { text: "Yes: Empathy is a core virtue we should all strive for.", weights: { virtue: 3, buddhism: 2 } },
-      { text: "No: Only God should change the nature of the human heart.", weights: { christian: 3, dcm: 2, islam: 2 } }
+      { text: "Yes: The victim's right to life outweighs the criminal's privacy.", weights: { util_act: 4, care: 4, humanism: 2 } },
+      { text: "No: The sanctity of the mind is an absolute boundary for the state.", weights: { imposition: 5, deon: 3, libertarian: 2 } },
+      { text: "Yes: By committing an act of aggression, the criminal forfeits certain rights.", weights: { contract: 4, util_rule: 2 } },
+      { text: "No: Justice must be pursued through virtuous and honorable means.", weights: { virtue: 4, confucian: 3 } }
     ]
   },
   {
     n: 52,
-    scenario: "Should we allow people to live in 'virtual bubbles' where they never see anything that upsets them?",
+    scenario: "Should people be allowed to enter cryopreservation to 'wait' for a better future?",
     options: [
-      { text: "Yes: They have achieved a world of zero imposition for themselves.", weights: { imposition: 5, egoism: 2 } },
-      { text: "No: It creates a fragile and unvirtuous society that fears truth.", weights: { stoic: 3, virtue: 2, confucian: 1 } },
-      { text: "No: We have a duty to face the reality of the world and God's creation.", weights: { christian: 2, islam: 1 } },
-      { text: "Yes: If it makes them happy, utility is being maximized.", weights: { util_act: 2, relativism: 1 } }
+      { text: "Yes: Individuals have the right to choose their own life path and timing.", weights: { imposition: 5, libertarian: 3, egoism: 2 } },
+      { text: "No: It is a flight from one's duties and the reality of their own time.", weights: { confucian: 4, stoic: 3, virtue: 2 } },
+      { text: "No: We should accept our place in the natural flow of the universe.", weights: { daoism: 5, stoic: 4, buddhism: 2 } },
+      { text: "Yes: If it fulfills their desire for life, it maximizes their utility.", weights: { util_act: 3, egoism: 2 } }
     ]
   },
   {
     n: 53,
-    scenario: "Is it moral to 'punish' a person by making them feel the exact pain they caused to another?",
+    scenario: "Is it moral to 'force' someone to be happy using technology if they are depressed?",
     options: [
-      { text: "Yes: It is the only true way to achieve justice/restitution.", weights: { imposition: 3, deon: 2, judaism: 2 } },
-      { text: "No: It is just more involuntary imposition; two wrongs don't make a right.", weights: { imposition: 4, care: 2, jainism: 1 } },
-      { text: "Yes: It is the law of karma or 'an eye for an eye.'", weights: { buddhism: 2, islam: 2, judaism: 2 } },
-      { text: "No: We should focus on reform and forgiveness.", weights: { christian: 3, humanism: 1 } }
+      { text: "No: Happiness must be a result of choice and growth, not an imposition.", weights: { imposition: 5, deon: 2, virtue: 2 } },
+      { text: "Yes: Eliminating suffering is a net good for the person and society.", weights: { util_act: 4, humanism: 3, care: 3 } },
+      { text: "No: Suffering and the full range of emotion are part of a virtuous life.", weights: { stoic: 5, virtue: 3, confucian: 2 } },
+      { text: "Yes: If the person is unable to choose for themselves, we must intervene.", weights: { care: 4, contract: 2 } }
     ]
   },
   {
     n: 54,
-    scenario: "A person wants to 'adopt' a non-conscious robot and treat it exactly like a human child.",
+    scenario: "Should we allow the cloning of a deceased loved one to ease the family's grief?",
     options: [
-      { text: "Moral: No one is being harmed; it's a personal choice.", weights: { imposition: 3, libertarian: 3, relativism: 1 } },
-      { text: "Immoral: it is a mockery of the human family and social duty.", weights: { confucian: 4, christian: 2, virtue: 2 } },
-      { text: "Neutral: It's just a person playing with a doll.", weights: { humanism: 2, nihilism: 2 } },
-      { text: "Immoral: It leads to a lack of real virtue and connection.", weights: { stoic: 2, virtue: 2 } }
+      { text: "Yes: It is an act of compassion and utilizes science for happiness.", weights: { care: 4, util_act: 3, humanism: 2 } },
+      { text: "No: It is an unnatural violation of the individuality of a person.", weights: { deon: 3, stoic: 4, christian: 3 } },
+      { text: "No: It imposes a pre-determined identity on the clone.", weights: { imposition: 5, virtue: 2 } },
+      { text: "No: Life and soul are unique and should not be manufactured.", weights: { christian: 5, islam: 4, dcm: 3 } }
     ]
   },
   {
     n: 55,
-    scenario: "Should we allow people to choose to be 'reborn' into a new body with no memory of their past life?",
+    scenario: "Should a person be allowed to work in a high-risk job for high pay if it is likely to kill them?",
     options: [
-      { text: "Yes: It is their right to end one experience and start another.", weights: { imposition: 5, libertarian: 2 } },
-      { text: "No: It is a flight from the duties and character earned in this life.", weights: { virtue: 3, confucian: 3, stoic: 2 } },
-      { text: "No: Only God controls the cycle of life and death.", weights: { christian: 3, islam: 2 } },
-      { text: "Yes: If it makes them happy, utility is maximized.", weights: { util_act: 3, buddhism: 1 } }
+      { text: "Yes: They are free to value their income over their safety.", weights: { imposition: 5, libertarian: 5, egoism: 3 } },
+      { text: "No: Society has a duty to protect its members from extreme harm.", weights: { humanism: 3, care: 4, contract: 2 } },
+      { text: "No: It is a reckless lack of the virtue of prudence.", weights: { virtue: 4, stoic: 3 } },
+      { text: "Yes: If they provide for their family through the risk, it is an act of duty.", weights: { confucian: 4, care: 3 } }
     ]
   },
   {
     n: 56,
-    scenario: "Is it moral to use 'fear' to keep a group of people from doing something dangerous to themselves?",
+    scenario: "Is it moral to limit the speech of those who incite social disharmony?",
     options: [
-      { text: "No: It is a psychological imposition on their own agency.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: Their safety and utility are more important than their fear.", weights: { util_act: 3, care: 2, humanism: 1 } },
-      { text: "Yes: It is the duty of a wise leader to guide the weak.", weights: { confucian: 3, virtue: 2, dcm: 1 } },
-      { text: "No: People must be free to make their own mistakes.", weights: { libertarian: 3, stoic: 1 } }
+      { text: "No: Freedom of expression is a fundamental right that cannot be imposed upon.", weights: { imposition: 5, libertarian: 4, deon: 2 } },
+      { text: "Yes: Social stability and the prevention of harm take precedence.", weights: { contract: 5, confucian: 4, util_rule: 3 } },
+      { text: "Yes: Words should be used to promote virtue, not discord.", weights: { virtue: 4, christian: 2 } },
+      { text: "No: We should meet bad ideas with better ideas and inner resilience.", weights: { stoic: 4, humanism: 2 } }
     ]
   },
   {
     n: 57,
-    scenario: "Should we allow people to sell their 'own' genetic code to a company to be used in experiments?",
+    scenario: "Should parents be allowed to select the physical traits of their children for aesthetic reasons?",
     options: [
-      { text: "Yes: It is their property to trade as they wish.", weights: { imposition: 4, libertarian: 4, egoism: 1 } },
-      { text: "No: It is a violation of human dignity and the sacredness of life.", weights: { deon: 2, christian: 3, islam: 2 } },
-      { text: "No: It could lead to a future world of mass imposition on others.", weights: { imposition: 3, contract: 2 } },
-      { text: "Yes: It could lead to great medical discoveries and utility.", weights: { humanism: 2, util_act: 3 } }
+      { text: "Yes: It is their right to design the best possible start for their children.", weights: { imposition: 3, egoism: 4, util_act: 2 } },
+      { text: "No: It treats children as products rather than autonomous people.", weights: { deon: 4, humanism: 3, care: 2 } },
+      { text: "No: We should accept our children as they are naturally given.", weights: { stoic: 4, daoism: 4, christian: 3 } },
+      { text: "No: It disrupts the natural diversity and equality of humans.", weights: { contract: 3, virtue: 2 } }
     ]
   },
   {
     n: 58,
-    scenario: "Is it moral to 'copy' a piece of art without the artist's permission if you aren't selling it?",
+    scenario: "Is it moral to eat meat if lab-grown alternatives are identical in taste and cost?",
     options: [
-      { text: "No: It is an imposition on the artist's will and creation.", weights: { imposition: 4, deon: 1, confucian: 1 } },
-      { text: "Yes: No one is being physically harmed or losing property.", weights: { util_act: 1, humanism: 1, nihilism: 1 } },
-      { text: "No: Property rights (even intellectual) are absolute.", weights: { libertarian: 4, egoism: 1 } },
-      { text: "Yes: Information and beauty should be shared freely.", weights: { buddhism: 1, relativism: 1 } }
+      { text: "No: Killing a sentient being when there is no need is an unjust imposition.", weights: { imposition: 4, care: 4, jainism: 5 } },
+      { text: "Neutral: Morality is about human interaction; animal status is different.", weights: { contract: 3, christian: 3, humanism: 2 } },
+      { text: "No: Compassion for all living things is a sign of a virtuous soul.", weights: { virtue: 4, buddhism: 4 } },
+      { text: "Yes: If it is part of one's tradition and causes no human harm.", weights: { relativism: 3, confucian: 2 } }
     ]
   },
   {
     n: 59,
-    scenario: "Should we allow people to use a 'time machine' to change their own past, even if it might change others' lives too?",
+    scenario: "Should the state be allowed to mandate 'fitness' programs to lower health costs for everyone?",
     options: [
-      { text: "No: It is a massive involuntary imposition on the lives of others.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: If they can make the world better, they should.", weights: { util_act: 3, humanism: 1 } },
-      { text: "No: We must accept our fate and the flow of the universe.", weights: { stoic: 3, daoism: 3, buddhism: 2 } },
-      { text: "No: Only God has the right to control time and destiny.", weights: { christian: 3, islam: 2, judaism: 2 } }
+      { text: "No: Forcing people to manage their bodies is an overreach of authority.", weights: { imposition: 5, libertarian: 5 } },
+      { text: "Yes: The shared costs of healthcare create a duty to remain healthy.", weights: { contract: 4, util_rule: 3 } },
+      { text: "No: Health is a personal virtue that should be pursued through choice.", weights: { virtue: 4, stoic: 3 } },
+      { text: "Yes: A strong and fit citizenry is better for the whole community.", weights: { confucian: 4, util_act: 2 } }
     ]
   },
   {
     n: 60,
-    scenario: "Is it moral to 'force' a child to learn a language they don't want to learn?",
+    scenario: "Is it moral for a soldier to refuse an order they believe is unjust?",
     options: [
-      { text: "No: It is an involuntary imposition on the child's mind and time.", weights: { imposition: 4, libertarian: 1 } },
-      { text: "Yes: It is for their own good and will increase their future utility.", weights: { util_act: 3, humanism: 2, care: 1 } },
-      { text: "Yes: It is the duty of parents to shape the character of their children.", weights: { confucian: 4, virtue: 2, christian: 1 } },
-      { text: "Yes: Social cohesion requires shared communication.", weights: { contract: 3, util_rule: 1 } }
+      { text: "Yes: Individual conscience and the prevention of harm override obedience.", weights: { imposition: 5, deon: 4, virtue: 3 } },
+      { text: "No: The social contract and military order require absolute duty.", weights: { contract: 5, confucian: 4, stoic: 2 } },
+      { text: "Yes: One's ultimate accountability is to God or higher moral law.", weights: { christian: 4, islam: 3, dcm: 4 } },
+      { text: "No: The soldier cannot know the full utility of the commander's plan.", weights: { util_rule: 3, egoism: 1 } }
     ]
   },
   {
     n: 61,
-    scenario: "Should we allow a person to 'transfer' their consciousness to a younger body if they can afford it?",
+    scenario: "Should we allow people to use a 'brain link' to share thoughts directly, even if it blurs privacy?",
     options: [
-      { text: "Yes: It is their right to continue their existence.", weights: { imposition: 5, libertarian: 2, egoism: 2 } },
-      { text: "No: It is an unnatural way to avoid the natural end of life.", weights: { stoic: 3, daoism: 3, christian: 2 } },
-      { text: "No: It creates an unfair hierarchy based on wealth.", weights: { humanism: 2, contract: 1 } },
-      { text: "No: The soul belongs to one body and one life.", weights: { christian: 3, islam: 2 } }
+      { text: "Yes: As long as it is consensual, it can end misunderstanding and suffering.", weights: { imposition: 4, humanism: 3, care: 3 } },
+      { text: "No: Individual privacy and the boundary of the self are sacred.", weights: { deon: 4, stoic: 3, christian: 2 } },
+      { text: "No: It is an unnatural violation of the human person.", weights: { daoism: 4, christian: 3 } },
+      { text: "Yes: It would create the ultimate social cohesion and utility.", weights: { util_act: 4, contract: 3 } }
     ]
   },
   {
     n: 62,
-    scenario: "Is it moral to 'shame' a person for being lazy if they are living off the work of others?",
+    scenario: "Is it moral to shame someone for their success if they do not give enough to charity?",
     options: [
-      { text: "Yes: It is an imposition on those who have to support them.", weights: { imposition: 3, contract: 2, deon: 1 } },
-      { text: "No: Shaming is just another form of imposition.", weights: { imposition: 4, care: 2 } },
-      { text: "Yes: Industry and hard work are core virtues.", weights: { virtue: 3, confucian: 3, stoic: 2 } },
-      { text: "Yes: It ensures the social contract is maintained.", weights: { contract: 3, util_rule: 1 } }
+      { text: "No: Their achievement is their own; forcing charity is an imposition.", weights: { imposition: 5, libertarian: 4, nietz: 4 } },
+      { text: "Yes: Great wealth carries a profound moral obligation to the suffering.", weights: { care: 4, humanism: 3, contract: 2 } },
+      { text: "No: We should celebrate the virtues of others rather than judging them.", weights: { virtue: 3, confucian: 2 } },
+      { text: "Yes: Greed is a spiritual failing that harms the community.", weights: { christian: 4, islam: 3, buddhism: 2 } }
     ]
   },
   {
     n: 63,
-    scenario: "Should we allow people to choose to have their 'pain' receptors turned off permanently?",
+    scenario: "Should people be allowed to live in a 'dream world' while machines maintain their bodies?",
     options: [
-      { text: "Yes: To live without the imposition of pain is a high moral goal.", weights: { imposition: 5, humanism: 2 } },
-      { text: "No: Pain is a necessary teacher for virtue and safety.", weights: { virtue: 3, stoic: 3, christian: 1 } },
-      { text: "Yes: It maximizes happiness/utility.", weights: { util_act: 3, egoism: 1 } },
-      { text: "No: It is an unnatural violation of our biological design.", weights: { daoism: 3, christian: 1 } }
+      { text: "Yes: They have achieved a state of zero suffering for themselves.", weights: { imposition: 5, egoism: 3, util_act: 2 } },
+      { text: "No: It is a flight from the duties and reality of existence.", weights: { stoic: 5, confucian: 4, virtue: 3 } },
+      { text: "No: We must live in the world that was created for us.", weights: { christian: 4, islam: 3, judaism: 3 } },
+      { text: "Yes: If it fulfills their definition of happiness, it is a moral win.", weights: { util_act: 3, relativism: 2 } }
     ]
   },
   {
     n: 64,
-    scenario: "Is it moral to 'lie' to a dying person about the death of their child to keep their final moments peaceful?",
+    scenario: "Should we end all 'involuntary imposition' even if society becomes less efficient?",
     options: [
-      { text: "Yes: Their final utility and peace are more important than the truth.", weights: { util_act: 3, care: 3 } },
-      { text: "No: It is an imposition on their right to know their own reality.", weights: { imposition: 4, deon: 1 } },
-      { text: "No: Honesty is a duty that doesn't end just because life is ending.", weights: { deon: 2, confucian: 2, christian: 1 } },
-      { text: "Yes: It is an act of mercy and compassion.", weights: { care: 3, buddhism: 2 } }
+      { text: "Yes: The removal of non-consensual force is the highest moral goal.", weights: { imposition: 10, libertarian: 5 } },
+      { text: "No: Total utility and the survival of the group are more important.", weights: { util_act: 6, humanism: 3 } },
+      { text: "No: Some struggle and imposition are necessary for growth and order.", weights: { stoic: 4, daoism: 4, confucian: 3 } },
+      { text: "No: The structure of society should be determined by moral or divine law.", weights: { christian: 4, dcm: 3, islam: 3 } }
     ]
   },
   {
     n: 65,
-    scenario: "Should we allow people to sell their 'own' organs after they die to the highest bidder?",
+    scenario: "Is it moral to use 'guilt' to influence a family member's behavior for their own good?",
     options: [
-      { text: "Yes: It is their property; they should be able to do what they want with it.", weights: { imposition: 4, libertarian: 4, egoism: 2 } },
-      { text: "No: The human body is sacred and should not be sold.", weights: { christian: 3, islam: 3, judaism: 2 } },
-      { text: "No: Organs should go to whoever needs them most, not whoever has the most money.", weights: { humanism: 2, util_act: 1, care: 1 } },
-      { text: "No: It is an unvirtuous and greedy way to treat one's own remains.", weights: { virtue: 2, confucian: 1 } }
+      { text: "No: Guilt is a form of emotional imposition and manipulation.", weights: { imposition: 5, care: 2 } },
+      { text: "Yes: It is a natural way to maintain family bonds and virtues.", weights: { confucian: 5, care: 4, virtue: 2 } },
+      { text: "No: We should allow others to find their own path through reason.", weights: { stoic: 4, humanism: 2 } },
+      { text: "Yes: If it prevents them from falling into sin or harmful vice.", weights: { christian: 4, dcm: 3 } }
     ]
   },
   {
     n: 66,
-    scenario: "Is it moral to 'force' a group of people to move if their home is in the way of a project that will save millions of lives?",
+    scenario: "Should a person be allowed to destroy a priceless work of art if they own it?",
     options: [
-      { text: "Yes: The lives of millions outweigh the imposition on the few.", weights: { util_act: 4, humanism: 1 } },
-      { text: "No: It is a total involuntary imposition on their lives and property.", weights: { imposition: 5, libertarian: 2, deon: 1 } },
-      { text: "Yes: The state has the right to act for the common good in the social contract.", weights: { contract: 4, util_rule: 1 } },
-      { text: "No: We must respect the historical and spiritual connection of people to their land.", weights: { care: 2, relativism: 2 } }
+      { text: "Yes: Ownership grants the absolute right to use or destroy property.", weights: { imposition: 4, libertarian: 5, egoism: 2 } },
+      { text: "No: Some objects have a beauty and value that belong to the human story.", weights: { humanism: 5, virtue: 3, confucian: 2 } },
+      { text: "No: It is a sign of a destructive and unvirtuous character.", weights: { virtue: 4, stoic: 3 } },
+      { text: "No: It is a waste of a resource that could bring joy to many.", weights: { util_act: 4, care: 2 } }
     ]
   },
   {
     n: 67,
-    scenario: "Should we allow people to have 'virtual' children that they can treat however they want?",
+    scenario: "Is it moral to prioritize saving a family member over ten strangers?",
     options: [
-      { text: "Yes: No real conscious being is being imposed upon.", weights: { imposition: 5, libertarian: 2, egoism: 1 } },
-      { text: "No: It encourages unvirtuous and cruel behavior.", weights: { virtue: 4, stoic: 2, confucian: 1 } },
-      { text: "No: It is a mockery of the human family and God's creation.", weights: { christian: 3, islam: 2 } },
-      { text: "Neutral: It's just a complex video game.", weights: { humanism: 2, nihilism: 2 } }
+      { text: "Yes: Special duties to family are the foundation of moral life.", weights: { care: 5, confucian: 5, virtue: 3 } },
+      { text: "No: All lives have equal value; utility requires saving the ten.", weights: { util_act: 5, humanism: 4 } },
+      { text: "Yes: It is the natural and virtuous instinct of the heart.", weights: { virtue: 3, buddhism: 2 } },
+      { text: "No: In a just contract, every person deserves equal consideration.", weights: { contract: 4, deon: 2 } }
     ]
   },
   {
     n: 68,
-    scenario: "Is it moral to 'hack' into a criminal's mind to find out where they hid a kidnapped child?",
+    scenario: "Should we allow the use of 'smart pills' that make someone much more productive but slightly shorter-lived?",
     options: [
-      { text: "Yes: The life of the child outweighs the imposition on the criminal's mind.", weights: { util_act: 3, care: 3, humanism: 1 } },
-      { text: "No: Mental privacy is an absolute boundary that should never be imposed upon.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: The criminal has forfeited their rights by their own actions.", weights: { contract: 3, util_rule: 2 } },
-      { text: "No: We must achieve justice through virtuous and honorable means.", weights: { virtue: 2, confucian: 1 } }
+      { text: "Yes: It is their choice to trade longevity for accomplishment.", weights: { imposition: 5, libertarian: 5, egoism: 4 } },
+      { text: "No: Life is more valuable than any amount of productivity.", weights: { humanism: 4, care: 3, stoic: 3 } },
+      { text: "No: We should value natural health over manufactured performance.", weights: { daoism: 4, virtue: 2 } },
+      { text: "Yes: If it allows them to contribute more to the world's progress.", weights: { util_act: 4, humanism: 2 } }
     ]
   },
   {
     n: 69,
-    scenario: "Should we allow people to choose to be 'frozen' for a thousand years in the hope of a better future?",
+    scenario: "Is it moral to tax a person's labor if they only want to work for their own subsistence?",
     options: [
-      { text: "Yes: It is their right to choose their own timeline and experience.", weights: { imposition: 5, libertarian: 2 } },
-      { text: "No: It is a flight from the duties and life of their own time.", weights: { confucian: 3, stoic: 2, christian: 1 } },
-      { text: "No: We should accept our place in the natural flow of life and death.", weights: { daoism: 3, stoic: 2 } },
-      { text: "Yes: It maximizes their personal utility.", weights: { util_act: 2, egoism: 2 } }
+      { text: "No: Forcing a person to work for others' benefit is a form of imposition.", weights: { imposition: 5, libertarian: 5 } },
+      { text: "Yes: Everyone has a duty to support the community they live in.", weights: { contract: 5, confucian: 4, care: 2 } },
+      { text: "Yes: Sharing resources is a spiritual and moral necessity.", weights: { christian: 4, islam: 3, humanism: 2 } },
+      { text: "No: One should be left in peace to live a simple, virtuous life.", weights: { stoic: 4, daoism: 4 } }
     ]
   },
   {
     n: 70,
-    scenario: "Is it moral to 'force' a person to be happy if you have the technology to do so?",
+    scenario: "Should we punish 'thought crimes' if a machine can prove someone has malicious intent?",
     options: [
-      { text: "No: Happiness must be a choice, not an involuntary imposition.", weights: { imposition: 5, deon: 1 } },
-      { text: "Yes: Happy people are better for themselves and others; utility is maximized.", weights: { util_act: 3, humanism: 1 } },
-      { text: "No: True virtue requires experiencing the full range of human emotion.", weights: { virtue: 3, stoic: 2, christian: 1 } },
-      { text: "Yes: If the social contract allows for the mental optimization of citizens.", weights: { contract: 3 } }
+      { text: "No: Justice is for actions; imposing on the mind is the ultimate violation.", weights: { imposition: 5, deon: 4, libertarian: 2 } },
+      { text: "Yes: Preventing harm at its source maximizes safety and utility.", weights: { util_act: 4, contract: 2 } },
+      { text: "No: One's inner struggle is where virtue is developed.", weights: { stoic: 4, virtue: 4, buddhism: 3 } },
+      { text: "No: Only God can judge the secrets of the heart.", weights: { christian: 5, islam: 4, dcm: 3 } }
     ]
   },
   {
     n: 71,
-    scenario: "Should we allow a person to 'sell' their own DNA to be used as the basis for a new consumer product?",
+    scenario: "Should a person be allowed to refuse a life-saving treatment due to their religious beliefs?",
     options: [
-      { text: "Yes: It is their property to trade as they wish.", weights: { imposition: 4, libertarian: 4, egoism: 1 } },
-      { text: "No: It is a violation of human dignity and the sacredness of life.", weights: { deon: 2, christian: 3, islam: 2 } },
-      { text: "No: It could lead to a world of mass imposition on others' genetics.", weights: { imposition: 3, contract: 2 } },
-      { text: "Yes: It could lead to great utility and medical discoveries.", weights: { humanism: 2, util_act: 3 } }
+      { text: "Yes: Respect for conscience and bodily autonomy is paramount.", weights: { imposition: 5, libertarian: 4, deon: 3 } },
+      { text: "No: The state has a duty to preserve the lives of its citizens.", weights: { contract: 3, care: 2, util_act: 2 } },
+      { text: "Yes: Faith and spiritual duty are higher than physical life.", weights: { christian: 4, dcm: 4, islam: 3 } },
+      { text: "No: We should act in accordance with reason and humanistic science.", weights: { humanism: 4, util_act: 3 } }
     ]
   },
   {
     n: 72,
-    scenario: "Is it moral to 'copy' your own mind into 10 different bodies so you can do more work?",
+    scenario: "Is it moral to create a child specifically to be a donor for an existing sick child?",
     options: [
-      { text: "Yes: If all the 'copies' are you and consent to the work.", weights: { imposition: 5, egoism: 3 } },
-      { text: "No: It creates a massive confusion of identity and social order.", weights: { confucian: 3, deon: 1, christian: 1 } },
-      { text: "No: It is a sign of extreme greed and a lack of virtue.", weights: { virtue: 3, stoic: 2 } },
-      { text: "Yes: It maximizes your utility and contribution to society.", weights: { util_act: 3, humanism: 1 } }
+      { text: "No: Using a person as a means to an end violates their dignity.", weights: { deon: 5, imposition: 4, humanism: 2 } },
+      { text: "Yes: It is an act of great love that saves a life and brings joy.", weights: { care: 5, util_act: 3 } },
+      { text: "No: Every child should be born for their own sake and destiny.", weights: { virtue: 4, stoic: 3, christian: 3 } },
+      { text: "Yes: If both children end up living happy lives, utility is maximized.", weights: { util_act: 4, humanism: 2 } }
     ]
   },
   {
     n: 73,
-    scenario: "Should we allow an AI to decide which 'historical' sites should be preserved and which should be demolished for progress?",
+    scenario: "Should a person be allowed to use an 'AI companion' for all their emotional needs?",
     options: [
-      { text: "Yes: An AI can be programmed to be perfectly objective about utility.", weights: { util_act: 4, humanism: 1 } },
-      { text: "No: A machine cannot understand the moral weight of human history and memory.", weights: { imposition: 3, deon: 1 } },
-      { text: "No: Such decisions should be based on human virtue and duty to our ancestors.", weights: { confucian: 4, virtue: 2 } },
-      { text: "No: History should be in the hands of the people it belongs to.", weights: { relativism: 3, care: 1 } }
+      { text: "Yes: It is their choice to seek comfort however they can.", weights: { imposition: 5, egoism: 4, relativism: 2 } },
+      { text: "No: It prevents the development of real human virtue and connection.", weights: { virtue: 5, confucian: 4, stoic: 3 } },
+      { text: "No: It is a mockery of the human heart and spirit.", weights: { christian: 3, islam: 2, humanism: 2 } },
+      { text: "Yes: If it makes them happy, it is a net positive for their life.", weights: { util_act: 3, care: 2 } }
     ]
   },
   {
     n: 74,
-    scenario: "Is it moral to 'force' a group of people to stop a traditional practice that causes mild pain to animals?",
+    scenario: "Is it moral to lie in an advertisement if it helps sell a product that truly benefits people?",
     options: [
-      { text: "Yes: The suffering of the animals is an imposition that must be stopped.", weights: { imposition: 3, care: 2, jainism: 3 } },
-      { text: "No: We should respect the traditional and cultural rights of the people.", weights: { relativism: 3, confucian: 1 } },
-      { text: "No: Animals do not have the same moral status as humans in our contract.", weights: { contract: 2, christian: 2, islam: 2 } },
-      { text: "Yes: Minimizing pain is a universal humanistic goal.", weights: { humanism: 3, util_act: 2 } }
+      { text: "No: Deception is a violation of the buyer's right to clear information.", weights: { imposition: 5, deon: 3, contract: 3 } },
+      { text: "Yes: The end (betterment of the buyer) justifies the means (the lie).", weights: { util_act: 4, egoism: 2 } },
+      { text: "No: Honesty is a fundamental virtue of the merchant.", weights: { virtue: 5, confucian: 4 } },
+      { text: "No: One should seek success through truth and integrity.", weights: { stoic: 4, christian: 3 } }
     ]
   },
   {
     n: 75,
-    scenario: "Should we allow people to choose to have their 'memories' of their own children erased if they are causing them pain?",
+    scenario: "Should the state be allowed to use 'subliminal' messaging to encourage lawful behavior?",
     options: [
-      { text: "Yes: It is their right to manage their own mental state.", weights: { imposition: 5, libertarian: 2 } },
-      { text: "No: It is a violation of the sacred duty and bond of parenthood.", weights: { confucian: 4, christian: 3, care: 3 } },
-      { text: "No: It is a flight from the reality and virtue of life's experiences.", weights: { stoic: 3, virtue: 2 } },
-      { text: "Yes: If it makes them happier, utility is maximized.", weights: { util_act: 2, buddhism: 1 } }
+      { text: "No: Any manipulation without awareness is a psychological imposition.", weights: { imposition: 5, deon: 3, libertarian: 2 } },
+      { text: "Yes: A more peaceful and lawful society benefits everyone.", weights: { util_act: 5, contract: 4, util_rule: 3 } },
+      { text: "No: True virtue requires choosing to be good consciously.", weights: { virtue: 5, stoic: 3, buddhism: 2 } },
+      { text: "Yes: It is the role of a wise government to nudge the people toward good.", weights: { confucian: 4, dcm: 1 } }
     ]
   },
   {
     n: 76,
-    scenario: "Is it moral to 'force' a person to be famous if they have a talent that would benefit millions?",
+    scenario: "Is it moral for a very wealthy person to live a life of pure luxury while others suffer?",
     options: [
-      { text: "No: It is a massive involuntary imposition on their life and privacy.", weights: { imposition: 5, libertarian: 1 } },
-      { text: "Yes: The utility they provide to millions outweighs their personal desire.", weights: { util_act: 4, humanism: 1 } },
-      { text: "Yes: We have a duty to use our gifts for the good of the world.", weights: { virtue: 3, christian: 2, confucian: 2 } },
-      { text: "No: True fame should be a choice and a path to virtue, not forced.", weights: { virtue: 2, stoic: 1 } }
+      { text: "Yes: They have no obligation to others' suffering if they caused no harm.", weights: { imposition: 5, libertarian: 5, egoism: 4 } },
+      { text: "No: We have a profound duty of care for our fellow human beings.", weights: { care: 5, humanism: 4, contract: 2 } },
+      { text: "No: Excess and lack of charity show a failure of character.", weights: { virtue: 4, confucian: 3, stoic: 2 } },
+      { text: "No: Wealth is a stewardship that must be used for the poor.", weights: { christian: 5, islam: 4, buddhism: 3 } }
     ]
   },
   {
     n: 77,
-    scenario: "Should we allow people to use a 'brain link' to share their feelings and thoughts with others directly?",
+    scenario: "Should we allow people to genetically engineer themselves to no longer need sleep?",
     options: [
-      { text: "Yes: As long as it is fully consensual, it could end many impositions.", weights: { imposition: 5, humanism: 2, care: 2 } },
-      { text: "No: it would lead to a loss of individual identity and privacy.", weights: { deon: 2, stoic: 1, christian: 1 } },
-      { text: "No: it is an unnatural violation of the human person.", weights: { daoism: 3, christian: 2 } },
-      { text: "Yes: It would maximize social cohesion and utility.", weights: { util_act: 3, contract: 2 } }
+      { text: "Yes: It is their right to optimize their time and experience.", weights: { imposition: 5, libertarian: 4, egoism: 3 } },
+      { text: "No: It is an unnatural violation of the human rhythm and soul.", weights: { daoism: 5, stoic: 4, christian: 2 } },
+      { text: "Yes: It would lead to a massive increase in human achievement and utility.", weights: { util_act: 4, humanism: 3 } },
+      { text: "No: We should find peace and virtue in the natural limits of life.", weights: { virtue: 3, buddhism: 2 } }
     ]
   },
   {
     n: 78,
-    scenario: "Is it moral to 'shame' a person for their own success if others are suffering?",
+    scenario: "Is it moral to prioritize the protection of a historic temple over building a much-needed school?",
     options: [
-      { text: "No: It is an imposition on their achievement and happiness.", weights: { imposition: 4, egoism: 2, nietz: 3 } },
-      { text: "Yes: It reminds them of their duty to the common good.", weights: { humanism: 2, contract: 2, care: 2 } },
-      { text: "No: We should celebrate the virtues and talents of others.", weights: { virtue: 2, confucian: 1 } },
-      { text: "Yes: Wealth is a sin while others are in need.", weights: { christian: 3, islam: 2, buddhism: 1 } }
+      { text: "Yes: We have a duty to preserve the spiritual and historical continuity of our people.", weights: { confucian: 5, relativism: 3, dcm: 2 } },
+      { text: "No: The education and utility of the living are more important than the past.", weights: { humanism: 5, util_act: 4, contract: 3 } },
+      { text: "Yes: Beauty and history have a value that cannot be measured by utility.", weights: { virtue: 3, stoic: 2 } },
+      { text: "No: Charity and the welfare of children are the highest moral duties.", weights: { care: 4, christian: 3, islam: 3 } }
     ]
   },
   {
     n: 79,
-    scenario: "Should we allow people to choose to live in a 'dream world' while their real body is kept alive by a machine?",
+    scenario: "Should people be allowed to live in 'virtual' versions of the past where they feel more at home?",
     options: [
-      { text: "Yes: They have achieved a world of zero imposition for themselves.", weights: { imposition: 5, egoism: 2 } },
-      { text: "No: It is a flight from the duties and reality of the world.", weights: { stoic: 3, confucian: 3, virtue: 2 } },
-      { text: "No: Life must be lived in the world God created.", weights: { christian: 3, islam: 2, judaism: 2 } },
-      { text: "Yes: If it makes them happy, utility is maximized.", weights: { util_act: 3, relativism: 1 } }
+      { text: "Yes: It is their right to seek peace in the era they choose.", weights: { imposition: 5, egoism: 3, relativism: 2 } },
+      { text: "No: We must face the reality and the duties of our own time.", weights: { stoic: 5, confucian: 4, virtue: 3 } },
+      { text: "No: We should accept the timeline and world we were born into.", weights: { daoism: 4, christian: 3 } },
+      { text: "Yes: If it makes them happier than the present, it is a good choice.", weights: { util_act: 4, care: 2 } }
     ]
   },
   {
     n: 80,
-    scenario: "If you could snap your fingers and end all 'involuntary imposition' forever, but the world would become less efficient, would you?",
+    scenario: "If a machine could perfectly govern humanity for maximum peace, should we hand over power?",
     options: [
-      { text: "Yes: The removal of involuntary imposition is the highest moral goal.", weights: { imposition: 10 } },
-      { text: "No: Efficiency and total utility are more important than individual consent.", weights: { util_act: 5, humanism: 2 } },
-      { text: "No: Suffering and imposition are necessary parts of the flow of the universe.", weights: { stoic: 3, daoism: 3, buddhism: 2 } },
-      { text: "No: Only God can and should determine the structure of our interactions.", weights: { christian: 4, dcm: 3, islam: 3 } }
+      { text: "No: Human autonomy and the right to make our own mistakes are essential.", weights: { imposition: 10, deon: 4, libertarian: 4 } },
+      { text: "Yes: The elimination of war and suffering is the ultimate human goal.", weights: { util_act: 6, humanism: 4, care: 2 } },
+      { text: "No: Leadership and governance are virtues that humans must practice.", weights: { virtue: 5, confucian: 5, stoic: 3 } },
+      { text: "No: Only God or a legitimate human authority should hold such power.", weights: { christian: 5, islam: 4, dcm: 4 } }
     ]
   }
 ];
 
+
+
+
+
+
+
+
+
+
+
+  
 let currentIdx = 0;
 let scores = {};
 Object.keys(MODELS).forEach(m => scores[m] = 0);
