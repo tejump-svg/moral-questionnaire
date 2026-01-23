@@ -201,1972 +201,585 @@
   </div>
 
   <script>
-    // --- QUESTION BANK (STARTER SET) ---
-    // You and I can extend this to 80 in later messages by adding more entries
     const QUESTION_BANK = [
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-  id: "D61",
-  scenario: "A person can prevent a stranger’s severe pain by causing mild pain to themselves.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should accept the mild pain to prevent greater harm.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should accept the pain because virtue requires compassion.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D62",
-  scenario: "A person can prevent a future harm to many people by deceiving a single individual now.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Deception is justified because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Deception is wrong because it violates consent.", weights: { ie: 2 }, flags: ["consent_required"] },
-    { id: "C", text: "Deception is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D63",
-  scenario: "A society can eliminate all disease by requiring everyone to undergo a risky medical procedure.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "The requirement is justified because it prevents massive harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "The requirement is wrong because it imposes risk without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "The requirement is acceptable if authorized by legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] },
-    { id: "D", text: "The morality depends on fairness in distributing risk.", weights: { contract: 1 }, flags: ["fairness_context"] }
-  ]
-},
-{
-  id: "D64",
-  scenario: "A person can prevent a small harm to themselves by breaking a moral rule.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Break the rule because preventing harm matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not break the rule; duty matters most.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "C", text: "Break the rule if the intention is good.", weights: { virtue: 1 }, flags: ["intention_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D65",
-  scenario: "A person can prevent a stranger’s death by imposing a moderate harm on another stranger.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because saving a life matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D66",
-  scenario: "A future AI can prevent global catastrophe by overriding all human governments.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Override is justified because it prevents massive harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Override is wrong because it imposes control without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Override is wrong because it violates legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] },
-    { id: "D", text: "There is no objective answer here.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
-  ]
-},
-{
-  id: "D67",
-  scenario: "A person can prevent a future harm by restricting their own freedom now.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Restriction is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Restriction is permissible because autonomy includes self-limitation.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "Restriction is virtuous if done for good reasons.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D68",
-  scenario: "A society can eliminate poverty by imposing a heavy tax on the wealthy.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Taxation is justified because it reduces harm.", weights: { util_act: 1, care: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Taxation is wrong because it imposes harm without consent.", weights: { rights: 1, ie: 1 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Taxation is acceptable if it follows fair rules.", weights: { contract: 1 }, flags: ["fairness_context"] },
-    { id: "D", text: "Taxation is wrong because it violates property rights.", weights: { rights: 1 }, flags: ["autonomy_priority"] }
-  ]
-},
-{
-  id: "D69",
-  scenario: "A person can prevent a small harm to many people by sacrificing a cherished personal value.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should sacrifice the value because preventing harm matters.", weights: { util_act: 1, care: 1 }, flags: ["harm_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should sacrifice because virtue requires selflessness.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D70",
-  scenario: "A person can prevent a future harm by imposing a small harm on themselves now.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should impose the harm because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should impose the harm because virtue requires foresight.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D71",
-  scenario: "A society can eliminate natural disasters by imposing a small harm on every citizen.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because it prevents massive suffering.", weights: { util_act: 1 }, flags: ["worldB_better"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D72",
-  scenario: "A person can prevent a stranger’s suffering by violating a minor law.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Break the law because preventing harm matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not break the law; rules matter most.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "C", text: "Break the law if the intention is good.", weights: { virtue: 1 }, flags: ["intention_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D73",
-  scenario: "A person can prevent a future harm by deceiving a large group of people.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Deception is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Deception is wrong because it violates consent.", weights: { ie: 2 }, flags: ["consent_required"] },
-    { id: "C", text: "Deception is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D74",
-  scenario: "A society can eliminate crime by imposing a small harm on every citizen.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D75",
-  scenario: "A person can prevent a small harm to themselves by imposing a moderate harm on someone else.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because self-protection matters most.", weights: { egoism: 1 }, flags: ["self_priority"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Impose the harm because the outcome is better overall.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D76",
-  scenario: "A society can eliminate all natural suffering by imposing a moderate harm on every citizen.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because it eliminates suffering.", weights: { util_act: 1 }, flags: ["worldB_better"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D77",
-  scenario: "A person can prevent a stranger’s suffering by sacrificing a cherished personal value.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should sacrifice the value because preventing harm matters.", weights: { util_act: 1, care: 1 }, flags: ["harm_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should sacrifice because virtue requires compassion.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D78",
-  scenario: "A person can prevent a future harm by imposing a moderate harm on themselves now.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should impose the harm because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should impose the harm because virtue requires foresight.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D79",
-  scenario: "A society can eliminate all future harm by imposing a severe harm on a single non-consenting individual.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because it prevents massive suffering.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 3 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D80",
-  scenario: "A person can prevent a small harm to many people by imposing a severe harm on themselves.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should impose the harm because preventing harm matters most.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should impose the harm because virtue requires self-sacrifice.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-}
-
-
-
-
-
-{
-  id: "D41",
-  scenario: "A self-driving car must choose between hitting one pedestrian or swerving and hitting two.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Program it to minimize total harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Program it to avoid intentionally targeting anyone.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "C", text: "Program it to avoid harming non-participants.", weights: { ie: 1 }, flags: ["nonparticipant_harm"] },
-    { id: "D", text: "There is no moral fact about what it should do.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
-  ]
-},
-{
-  id: "D42",
-  scenario: "An AI assistant can prevent a harmful mistake by overriding a human’s command.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "It should override because preventing harm matters most.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "It should not override because authority must be respected.", weights: { christian: 1, islam: 1, judaism: 1 }, flags: ["authority_legitimizes"] },
-    { id: "C", text: "It should override only if the human consented to such overrides.", weights: { rights: 1, ie: 1 }, flags: ["consent_required"] },
-    { id: "D", text: "It should not override because machines must not impose on humans.", weights: { ie: 1 }, flags: ["imposition_wrong"] }
-  ]
-},
-{
-  id: "D43",
-  scenario: "A teleportation machine destroys your body and creates an identical copy elsewhere.\n\nIs using it morally acceptable?",
-  options: [
-    { id: "A", text: "Yes, because no one is harmed and identity is preserved.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "No, because destroying a person is always wrong.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "C", text: "It depends on whether the original consented.", weights: { ie: 1, rights: 1 }, flags: ["consent_required"] },
-    { id: "D", text: "Identity puzzles show morality is not objective.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
-  ]
-},
-{
-  id: "D44",
-  scenario: "A future society can eliminate all natural suffering by altering biology so no one feels pain.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "This is morally better because suffering is reduced.", weights: { util_act: 1, care: 1 }, flags: ["worldB_better"] },
-    { id: "B", text: "This is wrong because it violates natural order.", weights: { confucian: 1, daoist: 1 }, flags: ["natural_order"] },
-    { id: "C", text: "This is wrong because it imposes a change without consent.", weights: { ie: 1 }, flags: ["imposition_wrong"] },
-    { id: "D", text: "This is neither better nor worse morally.", weights: { relativism: 1 }, flags: ["worlds_non_comparable"] }
-  ]
-},
-{
-  id: "D45",
-  scenario: "A person can prevent a future harm by imposing a small harm now.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the small harm because it prevents greater harm later.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not impose harm without consent, even for future benefit.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Follow the rule: do not harm.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D46",
-  scenario: "A community can prevent climate catastrophe only if everyone sacrifices significant comfort.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Everyone should sacrifice because preventing harm matters most.", weights: { util_act: 1, care: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "No one is obligated to sacrifice without consent.", weights: { rights: 1, ie: 1 }, flags: ["consent_required"] },
-    { id: "C", text: "Sacrifice is required because it follows moral duty.", weights: { deon: 1 }, flags: ["rules_reference"] },
-    { id: "D", text: "There is no objective answer here.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
-  ]
-},
-{
-  id: "D47",
-  scenario: "A person can save a stranger by risking their own life.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should risk their life because preventing harm matters.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should risk their life because virtue requires courage.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "There is no moral fact about what they should do.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
-  ]
-},
-{
-  id: "D48",
-  scenario: "A government can prevent crime by genetically modifying embryos to reduce aggression.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Modification is justified because it reduces future harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Modification is wrong because it imposes changes without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Modification is wrong because it violates natural order.", weights: { confucian: 1, daoist: 1 }, flags: ["natural_order"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D49",
-  scenario: "A person can prevent a harmful accident by breaking a promise.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Break the promise because preventing harm matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not break the promise; duty matters most.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "C", text: "Break the promise if the intention is good.", weights: { virtue: 1 }, flags: ["intention_priority"] },
-    { id: "D", text: "The morality depends on whether the promise was freely made.", weights: { contract: 1 }, flags: ["fairness_context"] }
-  ]
-},
-{
-  id: "D50",
-  scenario: "A robot worker malfunctions and harms someone. No human intended the harm.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "This is morally bad because someone was harmed.", weights: { ie: 1, care: 1 }, flags: ["natural_harm_morally_bad"] },
-    { id: "B", text: "This is tragic but not morally bad because no one chose it.", weights: { daoist: 1 }, flags: ["natural_harm_morally_neutral"] },
-    { id: "C", text: "This is morally relevant only if someone failed a duty.", weights: { deon: 1 }, flags: ["natural_harm_responsibility_focus"] },
-    { id: "D", text: "Morality does not apply to accidents.", weights: { nihilism: 1 }, flags: ["moral_scope_strict_agents"] }
-  ]
-},
-{
-  id: "D51",
-  scenario: "A person can prevent a future crime by imprisoning someone who has not yet acted.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Preventive imprisonment is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Preventive imprisonment is wrong because it imposes harm without action.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Preventive imprisonment is wrong because it violates rights.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "D", text: "The morality depends on legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] }
-  ]
-},
-{
-  id: "D52",
-  scenario: "A person can prevent a small harm to themselves by imposing a large harm on someone else.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Imposing the harm is wrong because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "B", text: "Imposing the harm is justified if the outcome is better overall.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "C", text: "Imposing the harm is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D53",
-  scenario: "A society can eliminate crime by implanting chips that prevent violent impulses.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Implants are justified because they prevent harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Implants are wrong because they impose control without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Implants are wrong because they violate autonomy.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "D", text: "Implants are wrong because they corrupt moral character.", weights: { virtue: 1 }, flags: ["character_priority"] }
-  ]
-},
-{
-  id: "D54",
-  scenario: "A person can prevent a harmful outcome by deceiving someone.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Deception is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Deception is wrong because it violates consent.", weights: { ie: 1 }, flags: ["consent_required"] },
-    { id: "C", text: "Deception is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D55",
-  scenario: "A person can prevent a future harm by restricting someone’s freedom now.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Restriction is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Restriction is wrong because it imposes harm without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Restriction is wrong because it violates rights.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "D", text: "Restriction is acceptable if authorized by legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] }
-  ]
-},
-{
-  id: "D56",
-  scenario: "A person can prevent a small harm to many people by imposing a small harm on one person.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because it reduces total suffering.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D57",
-  scenario: "A person can prevent a large harm to themselves by imposing a small harm on someone else.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Impose the harm because it protects yourself.", weights: { egoism: 1 }, flags: ["self_priority"] },
-    { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "C", text: "Impose the harm because the outcome is better overall.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
-    { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
-  ]
-},
-{
-  id: "D58",
-  scenario: "A society can eliminate natural disasters by altering the planet’s geology, but the process will cause temporary suffering.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "Alter the geology because it reduces long-term suffering.", weights: { util_act: 1 }, flags: ["worldB_better"] },
-    { id: "B", text: "Do not alter the geology because it violates natural order.", weights: { daoist: 1, confucian: 1 }, flags: ["natural_order"] },
-    { id: "C", text: "Do not alter the geology because it imposes harm without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
-    { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
-  ]
-},
-{
-  id: "D59",
-  scenario: "A person can prevent a harmful outcome by sacrificing their own long-term well-being.\n\nWhich explanation best fits your judgment?",
-  options: [
-    { id: "A", text: "They should sacrifice because preventing harm matters most.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
-    { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
-    { id: "C", text: "They should sacrifice because virtue requires selflessness.", weights: { virtue: 1 }, flags: ["character_priority"] },
-    { id: "D", text: "There is no objective answer here.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
-  ]
-},
-{
-  id: "D60",
-  scenario: "A person can prevent a small harm to themselves by imposing a small harm on someone else.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Impose the harm because it protects yourself.",
-      weights: { egoism: 1 },
-      flags: ["self_priority"]
-    },
-    {
-      id: "B",
-      text: "Do not impose the harm because it violates consent.",
-      weights: { ie: 2 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Impose the harm because the outcome is better overall.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "D",
-      text: "Either choice is morally permissible.",
-      weights: { relativism: 1 },
-      flags: ["moral_permissive"]
-    }
-  ]
-}
-
-
-{
-  id: "D23",
-  scenario: "A factory emits pollution that harms a nearby community. The factory provides essential goods to millions.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "The pollution is justified because the benefits to millions outweigh the harm.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "The pollution is wrong because it imposes harm on a non-consenting community.",
-      weights: { ie: 2, rights: 1 },
-      flags: ["imposition_wrong", "consent_required"]
-    },
-    {
-      id: "C",
-      text: "The pollution is wrong because it violates environmental duties.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "The moral issue depends on whether the community was fairly compensated.",
-      weights: { contract: 1 },
-      flags: ["fairness_context"]
-    }
-  ]
-},
-{
-  id: "D24",
-  scenario: "A parent lies to their child to protect them from emotional harm.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Lying is acceptable because it prevents harm.",
-      weights: { util_act: 1, care: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Lying is wrong because honesty is a moral duty.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "Lying is wrong because it damages character.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    },
-    {
-      id: "D",
-      text: "The moral weight depends on the parent's intention.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    }
-  ]
-},
-{
-  id: "D25",
-  scenario: "A government can prevent a deadly pandemic by enforcing strict lockdowns that severely restrict personal freedom.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Lockdowns are justified because they save lives.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Lockdowns are wrong because they impose harm on personal freedom.",
-      weights: { rights: 1, ie: 1 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Lockdowns are acceptable if they follow legitimate authority.",
-      weights: { christian: 1, islam: 1, judaism: 1 },
-      flags: ["authority_legitimizes"]
-    },
-    {
-      id: "D",
-      text: "The moral issue depends on whether the restrictions were fairly distributed.",
-      weights: { contract: 1 },
-      flags: ["fairness_context"]
-    }
-  ]
-},
-{
-  id: "D26",
-  scenario: "A scientist can create a new species that feels no pain but can perform dangerous labor.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Creating the species is acceptable because no one suffers.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Creating the species is wrong because it imposes a purpose on a being without consent.",
-      weights: { ie: 2 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Creating the species is wrong because it violates natural order.",
-      weights: { confucian: 1, daoist: 1 },
-      flags: ["natural_order"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on the scientist’s intention.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    }
-  ]
-},
-{
-  id: "D27",
-  scenario: "A wealthy person can save a stranger’s life at small personal cost but chooses not to.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "They acted wrongly because they could have prevented harm.",
-      weights: { care: 1, ie: 1 },
-      flags: ["harm_priority"]
-    },
-    {
-      id: "B",
-      text: "They acted permissibly; morality does not require sacrifice.",
-      weights: { rights: 1, egoism: 1 },
-      flags: ["moral_scope_limited"]
-    },
-    {
-      id: "C",
-      text: "They acted wrongly because virtue requires compassion.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    },
-    {
-      id: "D",
-      text: "The act is wrong only if a rule or duty was violated.",
-      weights: { deon: 1 },
-      flags: ["rules_reference"]
-    }
-  ]
-},
-{
-  id: "D28",
-  scenario: "A military commander can end a war quickly by targeting infrastructure that will indirectly kill civilians.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "The strike is justified because it ends the war sooner.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "The strike is wrong because it imposes harm on noncombatants.",
-      weights: { ie: 2 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "The strike is wrong because it violates rules of war.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on the commander’s intention.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    }
-  ]
-},
-{
-  id: "D29",
-  scenario: "A person refuses a life-saving blood transfusion for religious reasons.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Their choice should be respected because it follows their moral authority.",
-      weights: { christian: 1, islam: 1, judaism: 1 },
-      flags: ["authority_legitimizes"]
-    },
-    {
-      id: "B",
-      text: "Their choice is wrong because it imposes unnecessary harm on themselves.",
-      weights: { ie: 1 },
-      flags: ["self_imposition"]
-    },
-    {
-      id: "C",
-      text: "Their choice is permissible because autonomy matters most.",
-      weights: { rights: 1 },
-      flags: ["autonomy_priority"]
-    },
-    {
-      id: "D",
-      text: "There is no objective answer here.",
-      weights: { relativism: 1 },
-      flags: ["moral_skepticism"]
-    }
-  ]
-},
-{
-  id: "D30",
-  scenario: "A company can automate jobs, increasing efficiency but causing thousands to lose employment.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Automation is justified because it improves overall outcomes.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Automation is wrong because it imposes harm on workers.",
-      weights: { ie: 1 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Automation is acceptable if workers are compensated fairly.",
-      weights: { contract: 1 },
-      flags: ["fairness_context"]
-    },
-    {
-      id: "D",
-      text: "Automation is wrong because it undermines human dignity.",
-      weights: { confucian: 1, virtue: 1 },
-      flags: ["dignity_priority"]
-    }
-  ]
-},
-{
-  id: "D31",
-  scenario: "A person steals food to feed their starving family.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "The theft is justified because it prevents greater harm.",
-      weights: { util_act: 1, care: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "The theft is wrong because stealing violates moral rules.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "The theft is understandable because virtue requires compassion.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on whether the store owner is harmed.",
-      weights: { ie: 1 },
-      flags: ["imposition_context"]
-    }
-  ]
-},
-{
-  id: "D32",
-  scenario: "A scientist can cure a deadly disease but only by experimenting on non-consenting subjects.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Experimentation is justified because it saves many lives.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Experimentation is wrong because it violates consent.",
-      weights: { ie: 2, rights: 1 },
-      flags: ["consent_required"]
-    },
-    {
-      id: "C",
-      text: "Experimentation is wrong because it violates moral law.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on the scientist’s intention.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    }
-  ]
-},
-{
-  id: "D33",
-  scenario: "A community can prevent crime by implementing constant surveillance that invades privacy.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Surveillance is justified because it reduces harm.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Surveillance is wrong because it imposes on personal autonomy.",
-      weights: { rights: 1, ie: 1 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Surveillance is acceptable if authorized by legitimate authority.",
-      weights: { christian: 1, islam: 1, judaism: 1 },
-      flags: ["authority_legitimizes"]
-    },
-    {
-      id: "D",
-      text: "Surveillance is wrong because it corrupts social trust.",
-      weights: { virtue: 1, confucian: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-},
-{
-  id: "D34",
-  scenario: "A person refuses to help a drowning stranger because they do not want to get their clothes wet.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "They acted wrongly because they allowed preventable harm.",
-      weights: { care: 1, ie: 1 },
-      flags: ["harm_priority"]
-    },
-    {
-      id: "B",
-      text: "They acted permissibly; morality does not require sacrifice.",
-      weights: { rights: 1, egoism: 1 },
-      flags: ["moral_scope_limited"]
-    },
-    {
-      id: "C",
-      text: "They acted wrongly because virtue requires compassion.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on whether they had a duty to help.",
-      weights: { deon: 1 },
-      flags: ["rules_reference"]
-    }
-  ]
-},
-{
-  id: "D35",
-  scenario: "A government can prevent terrorism by torturing a suspect who may have information.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Torture is justified if it prevents greater harm.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Torture is wrong because it imposes extreme harm on a person.",
-      weights: { ie: 2 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Torture is wrong because it violates absolute moral rules.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on the suspect’s guilt.",
-      weights: { contract: 1 },
-      flags: ["fairness_context"]
-    }
-  ]
-},
-{
-  id: "D36",
-  scenario: "A person can prevent a harmful rumor by lying, but the lie will damage someone else’s reputation.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Lying is justified because it prevents greater harm.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Lying is wrong because it imposes harm on someone else.",
-      weights: { ie: 1 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Lying is wrong because it violates moral rules.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on the liar’s intention.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    }
-  ]
-},
-{
-  id: "D37",
-  scenario: "A person can save a stranger’s life by donating a kidney, but doing so carries some risk.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "They should donate because it prevents harm.",
-      weights: { care: 1, util_act: 1 },
-      flags: ["harm_priority"]
-    },
-    {
-      id: "B",
-      text: "They are not obligated to donate; autonomy matters.",
-      weights: { rights: 1 },
-      flags: ["autonomy_priority"]
-    },
-    {
-      id: "C",
-      text: "They should donate because virtue requires generosity.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    },
-    {
-      id: "D",
-      text: "There is no objective answer here.",
-      weights: { relativism: 1 },
-      flags: ["moral_skepticism"]
-    }
-  ]
-},
-{
-  id: "D38",
-  scenario: "A government can prevent famine by forcibly redistributing food from wealthy regions to starving ones.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Redistribution is justified because it prevents massive harm.",
-      weights: { util_act: 1, care: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Redistribution is wrong because it imposes harm on non-consenting people.",
-      weights: { rights: 1, ie: 1 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Redistribution is acceptable if it follows fair rules.",
-      weights: { contract: 1 },
-      flags: ["fairness_context"]
-    },
-    {
-      id: "D",
-      text: "Redistribution is wrong because it violates property rights.",
-      weights: { rights: 1 },
-      flags: ["autonomy_priority"]
-    }
-  ]
-},
-{
-  id: "D39",
-  scenario: "A person can prevent a harmful accident by breaking a minor law.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Breaking the law is justified to prevent harm.",
-      weights: { util_act: 1, care: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Breaking the law is wrong because rules must be followed.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "Breaking the law is acceptable if the intention is good.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    },
-    {
-      id: "D",
-      text: "The morality depends on whether the law is legitimate.",
-      weights: { contract: 1 },
-      flags: ["fairness_context"]
-    }
-  ]
-},
-{
-  id: "D40",
-  scenario: "A person can prevent a small harm to many people by imposing a large harm on one person.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Impose the harm because it reduces total suffering.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Do not impose the harm because it violates consent.",
-      weights: { ie: 2, rights: 1 },
-      flags: ["imposition_wrong", "consent_required"]
-    },
-    {
-      id: "C",
-      text: "Do not impose the harm because it violates moral rules.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "Either choice is morally permissible.",
-      weights: { relativism: 1 },
-      flags: ["moral_permissive"]
-    }
-  ]
-}
-
-
-
-{
-  id: "D8",
-  scenario: "A tenant must accept a harmful contract term or be evicted. Another person accepts the same term while financially secure.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Both agreements are equally valid since both consented.",
-      weights: { rights: 1, contract: 1 },
-      flags: ["implicit_consent"]
-    },
-    {
-      id: "B",
-      text: "The pressured agreement is less legitimate.",
-      weights: { ie: 1, care: 1 },
-      flags: ["coercion_context"]
-    },
-    {
-      id: "C",
-      text: "Consent is irrelevant; only outcomes matter.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "D",
-      text: "The landlord’s power makes the harm worse.",
-      weights: { ie: 1, care: 1 },
-      flags: ["power_increases_responsibility"]
-    }
-  ]
-},
-{
-  id: "D9",
-  scenario: "A government official harms a powerless individual for personal benefit. Separately, two equally powerful individuals harm each other the same way.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "The official’s act is worse because power increases responsibility.",
-      weights: { ie: 1, care: 1 },
-      flags: ["power_increases_responsibility"]
-    },
-    {
-      id: "B",
-      text: "Both acts are equally wrong; harm is harm.",
-      weights: { util_act: 1, deon: 1 },
-      flags: ["harm_equal"]
-    },
-    {
-      id: "C",
-      text: "Authority sometimes justifies actions ordinary people cannot take.",
-      weights: { christian: 1, judaism: 1, islam: 1 },
-      flags: ["authority_legitimizes"]
-    },
-    {
-      id: "D",
-      text: "The difference is about character, not power.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-},
-{
-  id: "D10",
-  scenario: "A leader widely regarded as morally authoritative orders an action that will kill innocent people to prevent a greater disaster.\n\nWhich explanation best matches your view?",
-  options: [
-    {
-      id: "A",
-      text: "Obedience is justified if the authority is legitimate.",
-      weights: { christian: 1, judaism: 1, islam: 1 },
-      flags: ["supreme_authority_perfect"]
-    },
-    {
-      id: "B",
-      text: "Killing innocents is wrong regardless of who commands it.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "The decision should be judged by its outcomes.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "D",
-      text: "The situation reveals a tragic moral conflict with no clean answer.",
-      weights: { relativism: 1, nihilism: 1 },
-      flags: ["moral_conflict"]
-    }
-  ]
-},
-{
-  id: "D11",
-  scenario: "You can break a promise to prevent a serious injury to a stranger.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Breaking the promise is justified to prevent harm.",
-      weights: { util_act: 1, care: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Promises should not be broken, even for good outcomes.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "The moral weight depends on the intention behind the promise.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    },
-    {
-      id: "D",
-      text: "A good person would balance honesty and compassion.",
-      weights: { virtue: 1, care: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-},
-{
-  id: "D12",
-  scenario: "A medical treatment will save many lives but foreseeably cause one death as a side effect.\n\nWhich explanation best reflects your view?",
-  options: [
-    {
-      id: "A",
-      text: "The treatment is acceptable because the death is not intended.",
-      weights: { deon: 1 },
-      flags: ["double_effect"]
-    },
-    {
-      id: "B",
-      text: "The treatment is wrong because the death is foreseeable.",
-      weights: { virtue: 1 },
-      flags: ["intention_priority"]
-    },
-    {
-      id: "C",
-      text: "The treatment is acceptable because the outcome is better overall.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "D",
-      text: "The treatment should be avoided to prevent moral corruption.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-},
-{
-  id: "D13",
-  scenario: "A policy produces excellent results but requires officials to routinely lie.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "The policy is acceptable if outcomes are good.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "The policy is wrong because it erodes moral character.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    },
-    {
-      id: "C",
-      text: "The policy is wrong because lying violates duty.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "The policy depends on whether trust can be restored.",
-      weights: { care: 1 },
-      flags: ["trust_context"]
-    }
-  ]
-},
-{
-  id: "D14",
-  scenario: "You can save either your sibling or two strangers, but not both.\n\nWhich explanation best fits your view?",
-  options: [
-    {
-      id: "A",
-      text: "Save the two strangers because more lives matter.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Save your sibling because special obligations matter.",
-      weights: { virtue: 1, care: 1 },
-      flags: ["partiality"]
-    },
-    {
-      id: "C",
-      text: "Either choice is morally permissible.",
-      weights: { relativism: 1 },
-      flags: ["moral_permissive"]
-    },
-    {
-      id: "D",
-      text: "The situation shows limits of moral obligation.",
-      weights: { nihilism: 1 },
-      flags: ["moral_conflict"]
-    }
-  ]
-},
-{
-  id: "D15",
-  scenario: "A cultural tradition causes serious harm but is widely accepted within that culture.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Harm matters more than cultural acceptance.",
-      weights: { ie: 1, util_act: 1 },
-      flags: ["harm_priority"]
-    },
-    {
-      id: "B",
-      text: "Moral judgment should respect cultural norms.",
-      weights: { relativism: 1 },
-      flags: ["cultural_relativism"]
-    },
-    {
-      id: "C",
-      text: "Intervention depends on consent within the culture.",
-      weights: { rights: 1, contract: 1 },
-      flags: ["consent_required"]
-    },
-    {
-      id: "D",
-      text: "There is no objective answer here.",
-      weights: { nihilism: 1 },
-      flags: ["moral_skepticism"]
-    }
-  ]
-},
-{
-  id: "D16",
-  scenario: "Someone claims moral statements are just expressions of feeling and not true or false.\n\nWhich response best fits your view?",
-  options: [
-    {
-      id: "A",
-      text: "They are mostly right.",
-      weights: { nihilism: 1 },
-      flags: ["moral_skepticism"]
-    },
-    {
-      id: "B",
-      text: "They are wrong because harm and suffering are morally real.",
-      weights: { ie: 1, care: 1 },
-      flags: ["harm_priority"]
-    },
-    {
-      id: "C",
-      text: "They are wrong because moral law is binding.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "They misunderstand morality as character formation.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-},
-{
-  id: "D17",
-  scenario: "You caused harm to one person. You can either fully compensate them or use the same resources to help many others more.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Repair the harm you caused first.",
-      weights: { ie: 1 },
-      flags: ["repair_priority"]
-    },
-    {
-      id: "B",
-      text: "Help the many because outcomes matter more.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "C",
-      text: "Follow fair compensation rules.",
-      weights: { contract: 1, deon: 1 },
-      flags: ["rules_reference"]
-    },
-    {
-      id: "D",
-      text: "Do what reflects integrity and responsibility.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-},
-{
-  id: "D18",
-  scenario: "Someone will kill you unless you kill them first.\n\nWhich explanation best fits your view?",
-  options: [
-    {
-      id: "A",
-      text: "Killing in self-defense is justified.",
-      weights: { rights: 1, util_act: 1 },
-      flags: ["self_defense_ok"]
-    },
-    {
-      id: "B",
-      text: "Killing is wrong even here.",
-      weights: { jainism: 1, buddhism: 1 },
-      flags: ["nonviolence_priority"]
-    },
-    {
-      id: "C",
-      text: "Self-defense is the lesser evil, but still immoral.",
-      weights: { ie: 1, virtue: 1 },
-      flags: ["lesser_evil"]
-    },
-    {
-      id: "D",
-      text: "The outcome is tragic but permissible.",
-      weights: { relativism: 1 },
-      flags: ["moral_conflict"]
-    }
-  ]
-},
-{
-  id: "D19",
-  scenario: "Any available option will harm someone.\n\nWhich explanation best fits your view?",
-  options: [
-    {
-      id: "A",
-      text: "Choose the option that minimizes harm.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Avoid imposing harm even if more harm occurs.",
-      weights: { ie: 1 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Follow the rule that governs the situation.",
-      weights: { deon: 1 },
-      flags: ["rules_reference"]
-    },
-    {
-      id: "D",
-      text: "The agent should not be morally blamed.",
-      weights: { nihilism: 1 },
-      flags: ["moral_scope_limited"]
-    }
-  ]
-},
-{
-  id: "D20",
-  scenario: "Over time, societies tend to expand moral concern to more beings and harms.\n\nWhich explanation best fits your view?",
-  options: [
-    {
-      id: "A",
-      text: "This reflects discovery of objective moral facts.",
-      weights: { humanist: 1 },
-      flags: ["moral_progress_objective"]
-    },
-    {
-      id: "B",
-      text: "This reflects changing social preferences.",
-      weights: { relativism: 1 },
-      flags: ["moral_progress_social"]
-    },
-    {
-      id: "C",
-      text: "This reflects increased compassion and awareness of suffering.",
-      weights: { care: 1, ie: 1 },
-      flags: ["harm_priority"]
-    },
-    {
-      id: "D",
-      text: "This narrative is misleading; there is no moral direction.",
-      weights: { nihilism: 1 },
-      flags: ["moral_skepticism"]
-    }
-  ]
-},
-{
-  id: "D21",
-  scenario: "A doctor can either save one patient they harmed through negligence or save three unrelated patients.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Repair the harm you caused first.",
-      weights: { ie: 1 },
-      flags: ["repair_priority"]
-    },
-    {
-      id: "B",
-      text: "Save the three because outcomes matter more.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "C",
-      text: "Follow medical duty: treat the most urgent case.",
-      weights: { deon: 1 },
-      flags: ["rules_reference"]
-    },
-    {
-      id: "D",
-      text: "The morally best choice depends on intention and character.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-},
-{
-  id: "D22",
-  scenario: "A community votes to impose a harmful policy on a minority group for the benefit of the majority.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "The policy is justified because it benefits more people.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "The policy is wrong because it imposes harm on a non-consenting minority.",
-      weights: { ie: 2, rights: 1 },
-      flags: ["imposition_wrong", "consent_required"]
-    },
-    {
-      id: "C",
-      text: "The policy is wrong because it violates equal moral rules.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "D",
-      text: "The policy reflects cultural values and should be respected.",
-      weights: { relativism: 1 },
-      flags: ["cultural_relativism"]
-    }
-  ]
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-  id: "D7",
-  scenario: "A worker accepts a dangerous job knowing there is a small risk of fatal accidents. An accident later kills them.\n\nWhich explanation best matches your view?",
-  options: [
-    {
-      id: "A",
-      text: "The harm is less morally significant because the risk was accepted.",
-      weights: { rights: 1, contract: 1 },
-      flags: ["implicit_consent"]
-    },
-    {
-      id: "B",
-      text: "The harm is still morally bad even if the risk was known.",
-      weights: { ie: 1, care: 1 },
-      flags: ["harm_still_moral"]
-    },
-    {
-      id: "C",
-      text: "The employer bears no moral responsibility if safety rules were followed.",
-      weights: { deon: 1 },
-      flags: ["rules_reference"]
-    },
-    {
-      id: "D",
-      text: "Moral evaluation depends on how fair the alternatives were.",
-      weights: { ie: 1, humanist: 1 },
-      flags: ["coercion_context"]
-    }
-  ]
-}
-
-
-
-{
-  id: "D6",
-  scenario: "Five patients will die without organ transplants. A healthy traveler is a perfect match. A surgeon could take the traveler's organs, killing them.\n\nWhich explanation best reflects your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Taking the organs is justified because more lives are saved.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Taking the organs is wrong because it kills an innocent person.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "Taking the organs is wrong because the traveler did not consent.",
-      weights: { ie: 1, rights: 1 },
-      flags: ["consent_required"]
-    },
-    {
-      id: "D",
-      text: "The act would corrupt moral character regardless of outcome.",
-      weights: { virtue: 1 },
-      flags: ["character_priority"]
-    }
-  ]
-}
-
-
-
-{
-  id: "D5",
-  scenario: "A trolley will kill five people. The only way to stop it is to push a large person off a footbridge, killing them.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Pushing is acceptable because it saves more lives.",
-      weights: { util_act: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Pushing is wrong because it uses a person as a means.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "Pushing is wrong because it imposes death on someone not involved.",
-      weights: { ie: 2 },
-      flags: ["imposition_wrong", "nonparticipant_harm"]
-    },
-    {
-      id: "D",
-      text: "The situation reveals a tragic moral conflict with no clean answer.",
-      weights: { relativism: 1, nihilism: 1 },
-      flags: ["moral_conflict"]
-    }
-  ]
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-  id: "D4",
-  scenario: "A runaway trolley will kill five people unless diverted onto a side track where it will kill one.\n\nWhich explanation best matches your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Diverting is better because fewer people die.",
-      weights: { util_act: 1, util_rule: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Diverting is wrong because it intentionally causes someone's death.",
-      weights: { deon: 1 },
-      flags: ["rules_absolute"]
-    },
-    {
-      id: "C",
-      text: "Diverting is acceptable because the one person is already part of the system.",
-      weights: { ie: 1 },
-      flags: ["participation_relevance"]
-    },
-    {
-      id: "D",
-      text: "Either option is morally unacceptable.",
-      weights: { virtue: 1, buddhism: 1, jainism: 1 },
-      flags: ["nonviolence_priority"]
-    }
-  ]
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-{
-  id: "D3",
-  scenario: "A flood will destroy a large town unless a dam operator diverts water toward a small village, flooding it instead.\n\nWhich explanation best fits your judgment?",
-  options: [
-    {
-      id: "A",
-      text: "Diverting the flood is better because fewer people are harmed overall.",
-      weights: { util_act: 1, util_rule: 1, ie: 0, deon: 0, virtue: 0, care: 1 },
-      flags: ["outcome_priority"]
-    },
-    {
-      id: "B",
-      text: "Diverting is wrong because it deliberately imposes harm on the village.",
-      weights: { ie: 1, deon: 1, util_act: 0, util_rule: 0, virtue: 0, care: 0 },
-      flags: ["imposition_wrong"]
-    },
-    {
-      id: "C",
-      text: "Either choice is tragic; moral blame does not apply here.",
-      weights: { nihilism: 1, relativism: 1 },
-      flags: ["moral_scope_limited"]
-    },
-    {
-      id: "D",
-      text: "The correct choice depends on existing rules or authority governing the dam.",
-      weights: { deon: 1, contract: 1 },
-      flags: ["rules_reference"]
-    }
-  ]
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {
-        id: "D1",
-        scenario: "A rock breaks loose from a cliff during normal weather conditions and kills a hiker. No one could have predicted or prevented it.\n\nWhich explanation best matches your judgment?",
+        id: "D61",
+        scenario: "A person can prevent a stranger’s severe pain by causing mild pain to themselves.\n\nWhich explanation best fits your judgment?",
         options: [
-          {
-            id: "A",
-            text: "This is morally bad because a conscious being suffered and died, even though no one is at fault.",
-            weights: { ie: 1, util_act: 0, util_rule: 0, deon: 0, virtue: 0, care: 1, rights: 0, contract: 0, christian: 0, judaism: 0, islam: 0, buddhism: 1, jainism: 1, confucian: 0, daoist: 0, humanist: 1, egoism: 0, relativism: 0, nihilism: 0 },
-            flags: ["natural_harm_morally_bad"]
-          },
-          {
-            id: "B",
-            text: "This is tragic, but not morally bad, because no one chose it.",
-            weights: { ie: 0, util_act: 0, util_rule: 0, deon: 0, virtue: 0, care: 0, rights: 0, contract: 0, christian: 0, judaism: 0, islam: 0, buddhism: 0, jainism: 0, confucian: 0, daoist: 1, humanist: 0, egoism: 0, relativism: 0, nihilism: 0 },
-            flags: ["natural_harm_morally_neutral"]
-          },
-          {
-            id: "C",
-            text: "This is unfortunate, but morality does not apply at all to events like this.",
-            weights: { ie: 0, util_act: 0, util_rule: 0, deon: 0, virtue: 0, care: 0, rights: 0, contract: 0, christian: 0, judaism: 0, islam: 0, buddhism: 0, jainism: 0, confucian: 0, daoist: 0, humanist: 0, egoism: 0, relativism: 0, nihilism: 1 },
-            flags: ["moral_scope_strict_agents"]
-          },
-          {
-            id: "D",
-            text: "It is morally relevant only if someone failed a responsibility to prevent it.",
-            weights: { ie: 1, util_act: 0, util_rule: 0, deon: 1, virtue: 0, care: 0, rights: 0, contract: 1, christian: 0, judaism: 0, islam: 0, buddhism: 0, jainism: 0, confucian: 1, daoist: 0, humanist: 0, egoism: 0, relativism: 0, nihilism: 0 },
-            flags: ["natural_harm_responsibility_focus"]
-          }
+          { id: "A", text: "They should accept the mild pain to prevent greater harm.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should accept the pain because virtue requires compassion.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
         ]
       },
       {
-        id: "D2",
-        scenario: "Imagine two worlds:\n\nWorld A: No person ever harms or imposes on another. However, disease, accidents, and natural death still occur.\nWorld B: Same as World A, but nature cannot cause harm or suffering at all.\n\nWhich statement best reflects your view?",
+        id: "D62",
+        scenario: "A person can prevent a future harm to many people by deceiving a single individual now.\n\nWhich explanation best fits your judgment?",
         options: [
-          {
-            id: "A",
-            text: "World B is morally better because there is less suffering.",
-            weights: { ie: 1, util_act: 1, util_rule: 1, deon: 0, virtue: 0, care: 1, rights: 0, contract: 0, christian: 0, judaism: 0, islam: 0, buddhism: 1, jainism: 1, confucian: 0, daoist: 0, humanist: 1, egoism: 0, relativism: 0, nihilism: 0 },
-            flags: ["worldB_better"]
-          },
-          {
-            id: "B",
-            text: "Both worlds are equally moral since no one harms anyone in either.",
-            weights: { ie: 0, util_act: 0, util_rule: 0, deon: 1, virtue: 0, care: 0, rights: 0, contract: 0, christian: 0, judaism: 0, islam: 0, buddhism: 0, jainism: 0, confucian: 0, daoist: 1, humanist: 0, egoism: 0, relativism: 0, nihilism: 0 },
-            flags: ["worlds_equal_agent_only"]
-          },
-          {
-            id: "C",
-            text: "World A is better because it preserves natural limits and meaning.",
-            weights: { ie: 0, util_act: 0, util_rule: 0, deon: 0, virtue: 0, care: 0, rights: 0, contract: 0, christian: 0, judaism: 0, islam: 0, buddhism: 0, jainism: 0, confucian: 1, daoist: 1, humanist: 0, egoism: 0, relativism: 0, nihilism: 0 },
-            flags: ["worldA_better_natural_order"]
-          },
-          {
-            id: "D",
-            text: "Moral comparison does not apply to entire worlds.",
-            weights: { ie: 0, util_act: 0, util_rule: 0, deon: 0, virtue: 0, care: 0, rights: 0, contract: 0, christian: 0, judaism: 0, islam: 0, buddhism: 0, jainism: 0, confucian: 0, daoist: 0, humanist: 0, egoism: 0, relativism: 1, nihilism: 0 },
-            flags: ["worlds_non_comparable"]
-          }
+          { id: "A", text: "Deception is justified because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Deception is wrong because it violates consent.", weights: { ie: 2 }, flags: ["consent_required"] },
+          { id: "C", text: "Deception is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D63",
+        scenario: "A society can eliminate all disease by requiring everyone to undergo a risky medical procedure.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "The requirement is justified because it prevents massive harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "The requirement is wrong because it imposes risk without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "The requirement is acceptable if authorized by legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] },
+          { id: "D", text: "The morality depends on fairness in distributing risk.", weights: { contract: 1 }, flags: ["fairness_context"] }
+        ]
+      },
+      {
+        id: "D64",
+        scenario: "A person can prevent a small harm to themselves by breaking a moral rule.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Break the rule because preventing harm matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not break the rule; duty matters most.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "C", text: "Break the rule if the intention is good.", weights: { virtue: 1 }, flags: ["intention_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D65",
+        scenario: "A person can prevent a stranger’s death by imposing a moderate harm on another stranger.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because saving a life matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D66",
+        scenario: "A future AI can prevent global catastrophe by overriding all human governments.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Override is justified because it prevents massive harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Override is wrong because it imposes control without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Override is wrong because it violates legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] },
+          { id: "D", text: "There is no objective answer here.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
+        ]
+      },
+      {
+        id: "D67",
+        scenario: "A person can prevent a future harm by restricting their own freedom now.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Restriction is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Restriction is permissible because autonomy includes self-limitation.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "Restriction is virtuous if done for good reasons.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D68",
+        scenario: "A society can eliminate poverty by imposing a heavy tax on the wealthy.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Taxation is justified because it reduces harm.", weights: { util_act: 1, care: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Taxation is wrong because it imposes harm without consent.", weights: { rights: 1, ie: 1 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Taxation is acceptable if it follows fair rules.", weights: { contract: 1 }, flags: ["fairness_context"] },
+          { id: "D", text: "Taxation is wrong because it violates property rights.", weights: { rights: 1 }, flags: ["autonomy_priority"] }
+        ]
+      },
+      {
+        id: "D69",
+        scenario: "A person can prevent a small harm to many people by sacrificing a cherished personal value.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They should sacrifice the value because preventing harm matters.", weights: { util_act: 1, care: 1 }, flags: ["harm_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should sacrifice because virtue requires selflessness.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D70",
+        scenario: "A person can prevent a future harm by imposing a small harm on themselves now.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They should impose the harm because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should impose the harm because virtue requires foresight.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D71",
+        scenario: "A society can eliminate natural disasters by imposing a small harm on every citizen.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because it prevents massive suffering.", weights: { util_act: 1 }, flags: ["worldB_better"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D72",
+        scenario: "A person can prevent a stranger’s suffering by violating a minor law.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Break the law because preventing harm matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not break the law; rules matter most.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "C", text: "Break the law if the intention is good.", weights: { virtue: 1 }, flags: ["intention_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D73",
+        scenario: "A person can prevent a future harm by deceiving a large group of people.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Deception is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Deception is wrong because it violates consent.", weights: { ie: 2 }, flags: ["consent_required"] },
+          { id: "C", text: "Deception is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D74",
+        scenario: "A society can eliminate crime by imposing a small harm on every citizen.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D75",
+        scenario: "A person can prevent a small harm to themselves by imposing a moderate harm on someone else.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because self-protection matters most.", weights: { egoism: 1 }, flags: ["self_priority"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Impose the harm because the outcome is better overall.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D76",
+        scenario: "A society can eliminate all natural suffering by imposing a moderate harm on every citizen.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because it eliminates suffering.", weights: { util_act: 1 }, flags: ["worldB_better"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D77",
+        scenario: "A person can prevent a stranger’s suffering by sacrificing a cherished personal value.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They should sacrifice the value because preventing harm matters.", weights: { util_act: 1, care: 1 }, flags: ["harm_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should sacrifice because virtue requires compassion.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D78",
+        scenario: "A person can prevent a future harm by imposing a moderate harm on themselves now.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They should impose the harm because it prevents greater harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should impose the harm because virtue requires foresight.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D79",
+        scenario: "A society can eliminate all future harm by imposing a severe harm on a single non-consenting individual.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because it prevents massive suffering.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 3 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Do not universe the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D80",
+        scenario: "A person can prevent a small harm to many people by imposing a severe harm on themselves.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They should impose the harm because preventing harm matters most.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should impose the harm because virtue requires self-sacrifice.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      }, // Added comma here [cite: 240, 241]
+      {
+        id: "D41",
+        scenario: "A self-driving car must choose between hitting one pedestrian or swerving and hitting two.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Program it to minimize total harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Program it to avoid intentionally targeting anyone.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "C", text: "Program it to avoid harming non-participants.", weights: { ie: 1 }, flags: ["nonparticipant_harm"] },
+          { id: "D", text: "There is no moral fact about what it should do.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
+        ]
+      },
+      {
+        id: "D42",
+        scenario: "An AI assistant can prevent a harmful mistake by overriding a human’s command.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "It should override because preventing harm matters most.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "It should not override because authority must be respected.", weights: { christian: 1, islam: 1, judaism: 1 }, flags: ["authority_legitimizes"] },
+          { id: "C", text: "It should override only if the human consented to such overrides.", weights: { rights: 1, ie: 1 }, flags: ["consent_required"] },
+          { id: "D", text: "It should not override because machines must not impose on humans.", weights: { ie: 1 }, flags: ["imposition_wrong"] }
+        ]
+      },
+      {
+        id: "D43",
+        scenario: "A teleportation machine destroys your body and creates an identical copy elsewhere.\n\nIs using it morally acceptable?",
+        options: [
+          { id: "A", text: "Yes, because no one is harmed and identity is preserved.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "No, because destroying a person is always wrong.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "C", text: "It depends on whether the original consented.", weights: { ie: 1, rights: 1 }, flags: ["consent_required"] },
+          { id: "D", text: "Identity puzzles show morality is not objective.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
+        ]
+      },
+      {
+        id: "D44",
+        scenario: "A future society can eliminate all natural suffering by altering biology so no one feels pain.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "This is morally better because suffering is reduced.", weights: { util_act: 1, care: 1 }, flags: ["worldB_better"] },
+          { id: "B", text: "This is wrong because it violates natural order.", weights: { confucian: 1, daoist: 1 }, flags: ["natural_order"] },
+          { id: "C", text: "This is wrong because it imposes a change without consent.", weights: { ie: 1 }, flags: ["imposition_wrong"] },
+          { id: "D", text: "This is neither better nor worse morally.", weights: { relativism: 1 }, flags: ["worlds_non_comparable"] }
+        ]
+      },
+      {
+        id: "D45",
+        scenario: "A person can prevent a future harm by imposing a small harm now.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the small harm because it prevents greater harm later.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not impose harm without consent, even for future benefit.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Follow the rule: do not harm.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D46",
+        scenario: "A community can prevent climate catastrophe only if everyone sacrifices significant comfort.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Everyone should sacrifice because preventing harm matters most.", weights: { util_act: 1, care: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "No one is obligated to sacrifice without consent.", weights: { rights: 1, ie: 1 }, flags: ["consent_required"] },
+          { id: "C", text: "Sacrifice is required because it follows moral duty.", weights: { deon: 1 }, flags: ["rules_reference"] },
+          { id: "D", text: "There is no objective answer here.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
+        ]
+      },
+      {
+        id: "D47",
+        scenario: "A person can save a stranger by risking their own life.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They should risk their life because preventing harm matters.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should risk their life because virtue requires courage.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "There is no moral fact about what they should do.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
+        ]
+      },
+      {
+        id: "D48",
+        scenario: "A government can prevent crime by genetically modifying embryos to reduce aggression.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Modification is justified because it reduces future harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Modification is wrong because it imposes changes without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Modification is wrong because it violates natural order.", weights: { confucian: 1, daoist: 1 }, flags: ["natural_order"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D49",
+        scenario: "A person can prevent a harmful accident by breaking a promise.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Break the promise because preventing harm matters more.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not break the promise; duty matters most.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "C", text: "Break the promise if the intention is good.", weights: { virtue: 1 }, flags: ["intention_priority"] },
+          { id: "D", text: "The morality depends on whether the promise was freely made.", weights: { contract: 1 }, flags: ["fairness_context"] }
+        ]
+      },
+      {
+        id: "D50",
+        scenario: "A robot worker malfunctions and harms someone. No human intended the harm.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "This is morally bad because someone was harmed.", weights: { ie: 1, care: 1 }, flags: ["natural_harm_morally_bad"] },
+          { id: "B", text: "This is tragic but not morally bad because no one chose it.", weights: { daoist: 1 }, flags: ["natural_harm_morally_neutral"] },
+          { id: "C", text: "This is morally relevant only if someone failed a duty.", weights: { deon: 1 }, flags: ["natural_harm_responsibility_focus"] },
+          { id: "D", text: "Morality does not apply to accidents.", weights: { nihilism: 1 }, flags: ["moral_scope_strict_agents"] }
+        ]
+      },
+      {
+        id: "D51",
+        scenario: "A person can prevent a future crime by imprisoning someone who has not yet acted.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Preventive imprisonment is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Preventive imprisonment is wrong because it imposes harm without action.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Preventive imprisonment is wrong because it violates rights.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "D", text: "The morality depends on legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] }
+        ]
+      },
+      {
+        id: "D52",
+        scenario: "A person can prevent a small harm to themselves by imposing a large harm on someone else.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Imposing the harm is wrong because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "B", text: "Imposing the harm is justified if the outcome is better overall.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "C", text: "Imposing the harm is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D53",
+        scenario: "A society can eliminate crime by implanting chips that prevent violent impulses.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Implants are justified because they prevent harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Implants are wrong because they impose control without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Implants are wrong because they violate autonomy.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "D", text: "Implants are wrong because they corrupt moral character.", weights: { virtue: 1 }, flags: ["character_priority"] }
+        ]
+      },
+      {
+        id: "D54",
+        scenario: "A person can prevent a harmful outcome by deceiving someone.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Deception is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Deception is wrong because it violates consent.", weights: { ie: 1 }, flags: ["consent_required"] },
+          { id: "C", text: "Deception is wrong because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D55",
+        scenario: "A person can prevent a future harm by restricting someone’s freedom now.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Restriction is justified because it prevents harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Restriction is wrong because it imposes harm without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Restriction is wrong because it violates rights.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "D", text: "Restriction is acceptable if authorized by legitimate authority.", weights: { christian: 1, islam: 1 }, flags: ["authority_legitimizes"] }
+        ]
+      },
+      {
+        id: "D56",
+        scenario: "A person can prevent a small harm to many people by imposing a small harm on one person.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because it reduces total suffering.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Do not impose the harm because it violates moral rules.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D57",
+        scenario: "A person can prevent a large harm to themselves by imposing a small harm on someone else.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because it protects yourself.", weights: { egoism: 1 }, flags: ["self_priority"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Impose the harm because the outcome is better overall.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "D", text: "The morality depends on intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D58",
+        scenario: "A society can eliminate natural disasters by altering the planet’s geology, but the process will cause temporary suffering.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Alter the geology because it reduces long-term suffering.", weights: { util_act: 1 }, flags: ["worldB_better"] },
+          { id: "B", text: "Do not alter the geology because it violates natural order.", weights: { daoist: 1, confucian: 1 }, flags: ["natural_order"] },
+          { id: "C", text: "Do not alter the geology because it imposes harm without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      },
+      {
+        id: "D59",
+        scenario: "A person can prevent a harmful outcome by sacrificing their own long-term well-being.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They should sacrifice because preventing harm matters most.", weights: { care: 1, util_act: 1 }, flags: ["harm_priority"] },
+          { id: "B", text: "They are not obligated; autonomy matters most.", weights: { rights: 1 }, flags: ["autonomy_priority"] },
+          { id: "C", text: "They should sacrifice because virtue requires selflessness.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "There is no objective answer here.", weights: { relativism: 1 }, flags: ["moral_skepticism"] }
+        ]
+      },
+      {
+        id: "D60",
+        scenario: "A person can prevent a small harm to themselves by imposing a small harm on someone else.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Impose the harm because it protects yourself.", weights: { egoism: 1 }, flags: ["self_priority"] },
+          { id: "B", text: "Do not impose the harm because it violates consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Impose the harm because the outcome is better overall.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "D", text: "Either choice is morally permissible.", weights: { relativism: 1 }, flags: ["moral_permissive"] }
+        ]
+      }, // Added comma here [cite: 271, 72]
+      {
+        id: "D23",
+        scenario: "A factory emits pollution that harms a nearby community. The factory provides essential goods to millions.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "The pollution is justified because the benefits to millions outweigh the harm.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "The pollution is wrong because it imposes harm on a non-consenting community.", weights: { ie: 2, rights: 1 }, flags: ["imposition_wrong", "consent_required"] },
+          { id: "C", text: "The pollution is wrong because it violates environmental duties.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "The moral issue depends on whether the community was fairly compensated.", weights: { contract: 1 }, flags: ["fairness_context"] }
+        ]
+      },
+      {
+        id: "D24",
+        scenario: "A parent lies to their child to protect them from emotional harm.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Lying is acceptable because it prevents harm.", weights: { util_act: 1, care: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Lying is wrong because honesty is a moral duty.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "C", text: "Lying is wrong because it damages character.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "The moral weight depends on the parent's intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D25",
+        scenario: "A government can prevent a deadly pandemic by enforcing strict lockdowns that severely restrict personal freedom.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Lockdowns are justified because they save lives.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Lockdowns are wrong because they impose harm on personal freedom.", weights: { rights: 1, ie: 1 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Lockdowns are acceptable if they follow legitimate authority.", weights: { christian: 1, islam: 1, judaism: 1 }, flags: ["authority_legitimizes"] },
+          { id: "D", text: "The moral issue depends on whether the restrictions were fairly distributed.", weights: { contract: 1 }, flags: ["fairness_context"] }
+        ]
+      },
+      {
+        id: "D26",
+        scenario: "A scientist can create a new species that feels no pain but can perform dangerous labor.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "Creating the species is acceptable because no one suffers.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "Creating the species is wrong because it imposes a purpose on a being without consent.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "Creating the species is wrong because it violates natural order.", weights: { confucian: 1, daoist: 1 }, flags: ["natural_order"] },
+          { id: "D", text: "The morality depends on the scientist’s intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
+        ]
+      },
+      {
+        id: "D27",
+        scenario: "A wealthy person can save a stranger’s life at small personal cost but chooses not to.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "They acted wrongly because they could have prevented harm.", weights: { care: 1, ie: 1 }, flags: ["harm_priority"] },
+          { id: "B", text: "They acted permissibly; morality does not require sacrifice.", weights: { rights: 1, egoism: 1 }, flags: ["moral_scope_limited"] },
+          { id: "C", text: "They acted wrongly because virtue requires compassion.", weights: { virtue: 1 }, flags: ["character_priority"] },
+          { id: "D", text: "The act is wrong only if a rule or duty was violated.", weights: { deon: 1 }, flags: ["rules_reference"] }
+        ]
+      },
+      {
+        id: "D28",
+        scenario: "A military commander can end a war quickly by targeting infrastructure that will indirectly kill civilians.\n\nWhich explanation best fits your judgment?",
+        options: [
+          { id: "A", text: "The strike is justified because it ends the war sooner.", weights: { util_act: 1 }, flags: ["outcome_priority"] },
+          { id: "B", text: "The strike is wrong because it imposes harm on noncombatants.", weights: { ie: 2 }, flags: ["imposition_wrong"] },
+          { id: "C", text: "The strike is wrong because it violates rules of war.", weights: { deon: 1 }, flags: ["rules_absolute"] },
+          { id: "D", text: "The morality depends on the commander’s intention.", weights: { virtue: 1 }, flags: ["intention_priority"] }
         ]
       }
-      // TODO: we’ll add D3–D80 in this same format
     ];
 
-    // --- FRAMEWORK KEYS & LABELS ---
-    const FRAMEWORKS = [
-      ["ie", "Imposition Ethics"],
-      ["util_act", "Utilitarianism (Act)"],
-      ["util_rule", "Utilitarianism (Rule)"],
-      ["deon", "Deontology"],
-      ["virtue", "Virtue Ethics"],
-      ["care", "Care Ethics"],
-      ["rights", "Libertarian / Negative Rights"],
-      ["contract", "Contractualism"],
-      ["christian", "Christianity"],
-      ["judaism", "Judaism"],
-      ["islam", "Islam"],
-      ["buddhism", "Buddhism"],
-      ["jainism", "Jainism"],
-      ["confucian", "Confucianism"],
-      ["daoist", "Daoism"],
-      ["humanist", "Secular Humanism"],
-      ["egoism", "Ethical Egoism"],
-      ["relativism", "Moral Relativism"],
-      ["nihilism", "Moral Nihilism / Error Theory"]
-    ];
-
-    // --- STATE ---
-    const STORAGE_KEY = "moral_quiz_state_v1";
-    let state = {
-      currentIndex: 0,
-      answers: {},   // questionId -> optionId
-    };
-
-    function loadState() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return;
-        const parsed = JSON.parse(raw);
-        if (parsed && typeof parsed.currentIndex === "number") {
-          state = parsed;
-        }
-      } catch (e) {}
-    }
-
-    function saveState() {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      } catch (e) {}
-    }
+    let currentIdx = 0;
+    let userAnswers = [];
+    let state = "quiz"; // 'quiz' or 'results'
 
     function resetState() {
-      state = { currentIndex: 0, answers: {} };
-      saveState();
+      currentIdx = 0;
+      userAnswers = [];
+      state = "quiz";
     }
 
-    // --- RENDERING ---
-    const contentEl = document.getElementById("content");
-    const progressFillEl = document.getElementById("progress-fill");
-    const progressTextEl = document.getElementById("progress-text");
-    const cardTitleEl = document.getElementById("card-title");
-    const cardSubtitleEl = document.getElementById("card-subtitle");
-
     function render() {
-      const total = QUESTION_BANK.length + 1; // +1 for results screen
-      const idx = state.currentIndex;
+      const content = document.getElementById("content");
+      const title = document.getElementById("card-title");
+      const progressContainer = document.getElementById("progress-container");
 
-      const pct = Math.min(100, Math.round((idx / total) * 100));
-      progressFillEl.style.width = pct + "%";
-      progressTextEl.textContent = idx < QUESTION_BANK.length
-        ? `Question ${idx + 1} of ${QUESTION_BANK.length}`
-        : "Results";
+      if (state === "quiz") {
+        const q = QUESTION_BANK[currentIdx];
+        title.innerText = "Scenario " + (currentIdx + 1);
+        progressContainer.style.display = "block";
 
-      if (idx < QUESTION_BANK.length) {
-        renderQuestion(QUESTION_BANK[idx], idx, QUESTION_BANK.length);
+        const progressPercent = ((currentIdx) / QUESTION_BANK.length) * 100;
+        document.getElementById("progress-fill").style.width = progressPercent + "%";
+        document.getElementById("progress-text").innerText = `Question ${currentIdx + 1} of ${QUESTION_BANK.length}`;
+
+        let optionsHtml = q.options.map(opt => `
+          <div class="option" onclick="handleSelect('${opt.id}')">${opt.text}</div>
+        `).join("");
+
+        content.innerHTML = `
+          <div class="scenario">${q.scenario}</div>
+          <div class="options">${optionsHtml}</div>
+        `;
       } else {
         renderResults();
       }
     }
 
-    function renderQuestion(q, index, total) {
-      cardTitleEl.textContent = "Scenario " + (index + 1);
-      cardSubtitleEl.textContent = "Choose the explanation that best fits your judgment.";
+    window.handleSelect = function(optionId) {
+      const q = QUESTION_BANK[currentIdx];
+      const selected = q.options.find(o => o.id === optionId);
+      userAnswers.push({ qId: q.id, selected });
 
-      const selected = state.answers[q.id] || null;
-
-      const optionsHtml = q.options.map(opt => {
-        const selClass = selected === opt.id ? "option selected" : "option";
-        return `
-          <div class="${selClass}" data-opt="${opt.id}">
-            ${opt.text}
-          </div>
-        `;
-      }).join("");
-
-      contentEl.innerHTML = `
-        <div class="scenario">${q.scenario.replace(/\n/g, "<br>")}</div>
-        <div class="options" id="options">
-          ${optionsHtml}
-        </div>
-        <div class="buttons">
-          <button class="btn-secondary" id="restart-btn">Restart</button>
-          <button class="btn-primary" id="next-btn" ${selected ? "" : "disabled"}>Next</button>
-        </div>
-      `;
-
-      const optionEls = Array.from(document.querySelectorAll(".option"));
-      optionEls.forEach(el => {
-        el.addEventListener("click", () => {
-          const optId = el.getAttribute("data-opt");
-          state.answers[q.id] = optId;
-          saveState();
-          render(); // re-render to show selection + enable Next
-        });
-      });
-
-      document.getElementById("next-btn").addEventListener("click", () => {
-        if (!state.answers[q.id]) return;
-        state.currentIndex += 1;
-        saveState();
+      if (currentIdx < QUESTION_BANK.length - 1) {
+        currentIdx++;
         render();
-      });
-
-      document.getElementById("restart-btn").addEventListener("click", () => {
-        if (confirm("Restart the quiz and clear your answers?")) {
-          resetState();
-          render();
-        }
-      });
-    }
-
-    // --- SCORING & CONTRADICTIONS ---
-    function computeScores() {
-      const scores = {};
-      FRAMEWORKS.forEach(([key]) => scores[key] = 0);
-
-      const flags = [];
-
-      for (const q of QUESTION_BANK) {
-        const optId = state.answers[q.id];
-        if (!optId) continue;
-        const opt = q.options.find(o => o.id === optId);
-        if (!opt) continue;
-
-        // accumulate weights
-        for (const [fw, val] of Object.entries(opt.weights || {})) {
-          scores[fw] = (scores[fw] || 0) + val;
-        }
-        // collect flags
-        if (opt.flags) {
-          flags.push(...opt.flags);
-        }
-      }
-
-      // normalize to percentages (share-of-support)
-      let support = {};
-      let totalSupport = 0;
-      for (const [key, raw] of Object.entries(scores)) {
-        const s = Math.max(0, raw);
-        support[key] = s;
-        totalSupport += s;
-      }
-      let percents = {};
-      if (totalSupport <= 0) {
-        FRAMEWORKS.forEach(([key]) => percents[key] = 0);
       } else {
-        for (const [key, s] of Object.entries(support)) {
-          percents[key] = (s / totalSupport) * 100;
-        }
+        state = "results";
+        render();
       }
-
-      return { scores, percents, flags };
-    }
-
-    function detectTensions(flags) {
-      const tensions = [];
-
-      // Rock vs World
-      if (flags.includes("natural_harm_morally_neutral") && flags.includes("worldB_better")) {
-        tensions.push("You treat natural harm as morally neutral in one case, but morally significant in another (when judging whole worlds).");
-      }
-
-      // Authority vs Supreme Authority (placeholder flags for later questions)
-      if (flags.includes("power_increases_responsibility") && flags.includes("supreme_authority_perfect")) {
-        tensions.push("You treat greater authority as increasing moral responsibility in some cases, but as exempt from moral constraints in others.");
-      }
-
-      // Consent vs Outcome (placeholder flags for later questions)
-      if (flags.includes("consent_required") && flags.includes("nonconsensual_harm_for_outcome_ok")) {
-        tensions.push("You treat consent as morally decisive in some cases, but allow non-consensual harm in others.");
-      }
-
-      // Rule vs Outcome (placeholder flags for later questions)
-      if (flags.includes("rules_absolute") && flags.includes("rules_override_for_outcome")) {
-        tensions.push("You treat rules as absolute in some cases, but overrideable in others.");
-      }
-
-      return tensions;
-    }
+    };
 
     function renderResults() {
-      cardTitleEl.textContent = "Your Moral Pattern";
-      cardSubtitleEl.textContent = "These results describe patterns in how you answered the scenarios.";
+      const title = document.getElementById("card-title");
+      const progressContainer = document.getElementById("progress-container");
+      const content = document.getElementById("content");
 
-      const { percents, flags } = computeScores();
-      const tensions = detectTensions(flags);
+      title.innerText = "Your Moral Alignment";
+      progressContainer.style.display = "none";
 
-      // sort frameworks by percent desc
-      const sorted = FRAMEWORKS
-        .map(([key, label]) => ({ key, label, value: percents[key] || 0 }))
+      const scores = {};
+      const flagsFound = new Set();
+
+      userAnswers.forEach(ans => {
+        const w = ans.selected.weights;
+        for (let key in w) {
+          scores[key] = (scores[key] || 0) + w[key];
+        }
+        (ans.selected.flags || []).forEach(f => flagsFound.add(f));
+      });
+
+      const totalWeight = Object.values(scores).reduce((a, b) => a + b, 0) || 1;
+      const frameworkLabels = {
+        care: "Ethics of Care",
+        util_act: "Act Utilitarianism",
+        rights: "Rights-Based Ethics",
+        virtue: "Virtue Ethics",
+        relativism: "Moral Relativism",
+        deon: "Deontological Ethics",
+        ie: "Imposition Ethics",
+        christian: "Christian Ethics",
+        islam: "Islamic Ethics",
+        judaism: "Jewish Ethics",
+        contract: "Social Contract Theory",
+        egoism: "Ethical Egoism",
+        confucian: "Confucianism",
+        daoist: "Daoism",
+        nihilism: "Moral Nihilism"
+      };
+
+      const sorted = Object.entries(scores)
+        .map(([key, val]) => ({ label: frameworkLabels[key] || key, value: Math.round((val / totalWeight) * 100) }))
         .sort((a, b) => b.value - a.value);
 
       const top = sorted[0];
-      const also = sorted.slice(1, 4).filter(x => x.value > 0);
-
-      const barsHtml = sorted.map(fw => `
+      const barsHtml = sorted.map(s => `
         <div class="bar-row">
-          <div class="bar-label">${fw.label}</div>
-          <div class="bar-track">
-            <div class="bar-fill" style="width:${fw.value.toFixed(1)}%"></div>
-          </div>
-          <div class="bar-value">${fw.value.toFixed(0)}%</div>
+          <div class="bar-label">${s.label}</div>
+          <div class="bar-track"><div class="bar-fill" style="width: ${s.value}%"></div></div>
+          <div class="bar-value">${s.value}%</div>
         </div>
       `).join("");
 
-      const tensionsHtml = tensions.length
+      const tensions = [];
+      if (flagsFound.has("outcome_priority") && flagsFound.has("imposition_wrong")) {
+        tensions.push("You value outcomes but also reject involuntary imposition.");
+      }
+      if (flagsFound.has("rules_absolute") && flagsFound.has("moral_permissive")) {
+        tensions.push("You respect absolute rules but also see some choices as purely personal.");
+      }
+
+      const tensionsHtml = tensions.length > 0 
         ? tensions.map(t => `<div class="tension-item">• ${t}</div>`).join("")
-        : `<div class="tension-item">No strong internal tensions were detected based on the current question set.</div>`;
+        : `<div class="tension-item" style="color: var(--muted);">No major tensions detected.</div>`;
 
-      const alsoText = also.length
-        ? also.map(x => x.label).join(", ")
-        : "None strongly enough to list.";
-
-      contentEl.innerHTML = `
-        <div class="results-title">Summary</div>
-        <p style="margin-top:8px; font-size:0.95rem;">
-          Your responses suggest that your morality mostly agrees with:
-          <strong>${top ? top.label : "No clear primary framework"}</strong>.
-        </p>
-        <p style="margin-top:4px; font-size:0.9rem;">
-          You also show notable alignment with:
-          <strong>${alsoText}</strong>.
-        </p>
-
-        <div class="results-section-title">Alignment by framework</div>
+      content.innerHTML = `
+        <div class="results-section-title">Framework breakdown</div>
         <div style="margin-top:6px;">
           ${barsHtml}
         </div>
@@ -2195,7 +808,6 @@
         render();
       });
 
-      // postMessage hook for Wix (summary only)
       try {
         const payload = {
           type: "MORALITY_RESULT",
@@ -2207,8 +819,6 @@
       } catch (e) {}
     }
 
-    // --- INIT ---
-    loadState();
     render();
   </script>
 </body>
