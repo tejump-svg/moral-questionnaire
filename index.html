@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -853,14 +854,34 @@ const QUESTION_BANK = [
       { text: "Yes: If it makes them happier than the present, it is a good choice.", weights: { util_act: 4, care: 2 } }
     ]
   },
-  {
+{
     n: 80,
-    scenario: "If a machine could perfectly govern humanity for maximum peace, should we hand over power?",
+    scenario: "Should individuals be allowed to sell their own genetic data for commercial use?",
     options: [
-      { text: "No: Human autonomy and the right to make our own mistakes are essential.", weights: { imposition: 10, deon: 4, libertarian: 4 } },
-      { text: "Yes: The elimination of war and suffering is the ultimate human goal.", weights: { util_act: 6, humanism: 4, care: 2 } },
-      { text: "No: Leadership and governance are virtues that humans must practice.", weights: { virtue: 5, confucian: 5, stoic: 3 } },
-      { text: "No: Only God or a legitimate human authority should hold such power.", weights: { christian: 5, islam: 4, dcm: 4 } }
+      { text: "Yes: It is their personal information and property to trade.", weights: { imposition: 5, libertarian: 5, egoism: 2 } },
+      { text: "No: It commodifies the essence of human life and dignity.", weights: { humanism: 3, christian: 3, deon: 2 } },
+      { text: "No: It poses a risk to the collective privacy of their relatives.", weights: { care: 3, contract: 2 } },
+      { text: "Yes: It can fuel scientific progress and increase global utility.", weights: { util_act: 4, humanism: 2 } }
+    ]
+  },
+  {
+    n: 81,
+    scenario: "If a rock naturally falls on someone, causing them pain or death without any agent being involved, is this event immoral?",
+    options: [
+      { text: "Yes: Morality is about the state of the world; any imposition on a will is a moral negative.", weights: { imposition: 5 } },
+      { text: "No: Morality only applies to the actions and intentions of conscious agents.", weights: { deon: 4, virtue: 3, humanism: 3 } },
+      { text: "No: Natural events are part of a divine plan or the neutral laws of physics.", weights: { christian: 3, stoic: 4, daoism: 4 } },
+      { text: "Yes: It is a 'natural evil' because it results in a net decrease in total happiness.", weights: { util_act: 4, care: 2 } }
+    ]
+  },
+  {
+    n: 82,
+    scenario: "Imagine World A (No agent ever harms/imposes on another) and World B (Same as A, but nature is also physically incapable of harming agents). Which is more moral?",
+    options: [
+      { text: "World B is more moral: It contains fewer total impositions on the wills of conscious beings.", weights: { imposition: 5, util_act: 3 } },
+      { text: "World A is more moral: Morality is about the 'choice' to be good; World B lacks the virtue of overcoming nature.", weights: { virtue: 5, stoic: 3, christian: 2 } },
+      { text: "They are equal: Nature has no moral valence; only the relationship between agents matters.", weights: { deon: 4, contract: 4, humanism: 3 } },
+      { text: "World B is more moral: A creator or system that allows natural harm is fundamentally flawed.", weights: { humanism: 4, care: 3 } }
     ]
   }
 ];
