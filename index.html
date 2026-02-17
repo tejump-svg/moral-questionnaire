@@ -6,36 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-      --bg: #121212;
-      --card-bg: #1e1e1e;
-      --text: #e0e0e0;
-      --accent: #3b82f6;
-      --accent-soft: rgba(59, 130, 246, 0.1);
-      --border: #333333;
-      --muted: #a0a0a0;
+      /* Mapped from Figma Screenshot */
+      --bg: #ffffff;
+      --card-bg: #ffffff;
+      --text: #000000;
+      --accent: #b08d1e; /* Gold/Mustard */
+      --accent-soft: rgba(176, 141, 30, 0.1);
+      --border: #e0e0e0;
+      --muted: #666666;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 20px; display: flex; justify-content: center; min-height: 100vh; }
     .app { max-width: 900px; width: 100%; }
-    .card { background: var(--card-bg); border-radius: 16px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); padding: 40px; border: 1px solid var(--border); }
+    .card { background: var(--card-bg); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); padding: 40px; border: 1px solid var(--border); }
     .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-    .progress-bar { flex-grow: 1; height: 6px; background: #2d2d2d; border-radius: 3px; margin: 0 20px; overflow: hidden; }
+    .progress-bar { flex-grow: 1; height: 10px; background: #f0f0f0; border-radius: 0px; margin: 0 20px; overflow: hidden; border: 1px solid #ccc; }
     .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.4s ease; }
-    .scenario { font-size: 1.35rem; line-height: 1.5; margin-bottom: 35px; font-weight: 500; color: #ffffff; }
+    .scenario { font-size: 1.35rem; line-height: 1.5; margin-bottom: 35px; font-weight: 500; color: #000000; }
     .options { display: grid; gap: 16px; }
-    .option { padding: 22px; border: 1px solid var(--border); border-radius: 12px; cursor: pointer; transition: 0.2s; background: #252525; font-size: 1.05rem; }
+    .option { padding: 22px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: 0.2s; background: #ffffff; font-size: 1.05rem; color: #333; }
     .option:hover { border-color: var(--accent); background: var(--accent-soft); }
-    .btn-results { background: var(--accent); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+    .btn-results { background: var(--accent); color: white; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-weight: 600; }
     .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 16px; }
-    .bar-group { background: #252525; padding: 18px; border-radius: 12px; border: 1px solid var(--border); }
-    .bar-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; }
-    .bar-track { height: 6px; background: #121212; border-radius: 3px; overflow: hidden; }
+    .bar-group { background: #f9f9f9; padding: 18px; border-radius: 12px; border: 1px solid var(--border); }
+    .bar-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; color: #000; }
+    .bar-track { height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
     .bar-fill { height: 100%; background: var(--accent); transition: width 1s ease-out; }
+    
+    /* Title matching the image style */
+    .title-banner { text-align: center; margin-bottom: 40px; }
+    .title-banner h1 { font-family: serif; letter-spacing: 5px; font-size: 2.5rem; text-transform: uppercase; }
+    .title-banner span { color: var(--accent); font-weight: bold; font-size: 0.8rem; letter-spacing: 2px; }
   </style>
 </head>
 <body>
 
 <div class="app">
+  <div class="title-banner">
+    <h1>Decision Tree</h1>
+    <span>START</span>
+  </div>
+
   <div class="card">
     <div class="header" id="quiz-header">
       <div id="q-num" style="font-weight: 800; color: var(--accent); min-width: 80px;">Q1</div>
@@ -49,7 +60,7 @@
     </div>
 
     <div id="results-area" style="display: none;">
-      <h2 style="margin-bottom: 8px; color: #fff;">Moral Alignment Profile</h2>
+      <h2 style="margin-bottom: 8px; color: #000;">Moral Alignment Profile</h2>
       <p style="margin-bottom: 30px; color: var(--muted);">Mapped across academic and religious frameworks.</p>
       <div class="results-grid" id="results-grid"></div>
       <button class="btn-results" style="margin-top: 40px; width: 100%;" onclick="location.reload()">Restart Diagnostic</button>
